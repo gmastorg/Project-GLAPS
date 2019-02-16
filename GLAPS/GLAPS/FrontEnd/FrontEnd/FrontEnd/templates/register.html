@@ -197,7 +197,7 @@
 
                         <div class="col-sm-7 col-md-7 col-lg-6 col-xs-9 input-group mobilePad" style="font-weight:600;">
 
-                            <input style="border-radius: 4px!important;" type="text" class="form-control" name="username" id="username">
+                            <input style="border-radius: 4px!important;" type="text" class="form-control" name="username" id="username" required>
 
                         </div>
                         <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
@@ -210,7 +210,7 @@
 
                         <div class="col-sm-7 col-md-7 col-lg-6 col-xs-9 input-group mobilePad" style="font-weight:600;">
 
-                            <input style="border-radius: 4px!important;" type="email" class="form-control" name="yourEmail" id="yourEmail">
+                            <input style="border-radius: 4px!important;" type="email" class="form-control" name="yourEmail" id="yourEmail" required>
 
                         </div>
                         <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
@@ -242,7 +242,7 @@
 
                         <div class="col-sm-7 col-md-7 col-lg-6 col-xs-9 input-group mobilePad">
 
-                            <input type="password" onkeyup="passwordChecker()" name="password" id="password" class="form-control"><span class="input-group-btn">
+                            <input type="password" onkeyup="passwordChecker()" name="password" id="password" required class="form-control"><span class="input-group-btn">
                                 <button class="btn btn-defaultCUST" id="view_button3" style=" height: 34px;padding-left: 7px;" type="button">
                                     <span class="glyphicon glyphicon-eye-open"></span>
                                 </button>
@@ -271,7 +271,7 @@
 
                         <div class="col-sm-7 col-md-7 col-lg-6 col-xs-9 input-group mobilePad">
 
-                            <input type="password" name="verifypassword" id="verifypassword" class="form-control"><span class="input-group-btn">
+                            <input type="password" name="verifypassword" id="verifypassword" required class="form-control"><span class="input-group-btn">
                                 <button class="btn btn-defaultCUST" id="view_button4" style=" height: 34px;padding-left: 7px;" type="button">
                                     <span class="glyphicon glyphicon-eye-open"></span>
                                 </button>
@@ -299,7 +299,5 @@
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}

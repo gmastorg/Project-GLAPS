@@ -44,14 +44,17 @@ def register():
 	"""
 	if request.method == 'POST':
 		username = request.form['username']
-		password = request.form['password']
+		email = request.form['yourEmail']
+        #password = request.form['password'] #this is throwing error
 		db = get_db()
 		error = None
 
 		if not username:
 			error = 'Username is required.'
-		elif not password:
-			error = 'Password is required.'
+		elif not email:
+			error = 'Email is required.'
+   #     elif not password: # error thrown
+			#error = 'Password is required.'
 		elif db.execute(
 			'SELECT id FROM user WHERE username = ?', (username,)
 		).fetchone() is not None:
@@ -61,7 +64,7 @@ def register():
 			# the name is available, store it in the database and go to
 			# the login page
 			db.execute(
-				'INSERT INTO user (username, password) VALUES (?, ?)',
+				'INSERT INTO user (username, yourEmail, password) VALUES (?, ?)',
 				(username, generate_password_hash(password))
 			)
 			db.commit()
