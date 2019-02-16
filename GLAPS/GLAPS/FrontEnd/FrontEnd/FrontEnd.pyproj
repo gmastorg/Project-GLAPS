@@ -53,6 +53,8 @@
     <Content Include="FrontEnd\templates\comingsoon.html" />
     <Content Include="FrontEnd\templates\login.html" />
     <Content Include="FrontEnd\templates\register.html" />
+    <Content Include="FrontEnd\users.db" />
+    <Content Include="FrontEnd\users.sqlite.sql" />
     <Content Include="requirements.txt" />
     <Content Include="FrontEnd\static\content\bootstrap.css" />
     <Content Include="FrontEnd\static\content\bootstrap.min.css" />
