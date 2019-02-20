@@ -33,6 +33,9 @@
     <Compile Include="FrontEnd\db.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FrontEnd\templates\module1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="FrontEnd\__init__.py" />
     <Compile Include="FrontEnd\views.py" />
@@ -53,7 +56,6 @@
     <Content Include="FrontEnd\templates\comingsoon.html" />
     <Content Include="FrontEnd\templates\login.html" />
     <Content Include="FrontEnd\templates\register.html" />
-    <Content Include="requirements.txt" />
     <Content Include="FrontEnd\static\content\bootstrap.css" />
     <Content Include="FrontEnd\static\content\bootstrap.min.css" />
     <Content Include="FrontEnd\static\content\site.css" />
@@ -80,6 +82,8 @@
     <Content Include="FrontEnd\templates\contact.html" />
     <Content Include="FrontEnd\templates\home.html" />
     <Content Include="FrontEnd\templates\layout.html" />
+    <Content Include="instance\glapsdb.sqlite" />
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
