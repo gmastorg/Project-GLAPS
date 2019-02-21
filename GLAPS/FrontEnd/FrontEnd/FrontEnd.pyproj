@@ -48,14 +48,15 @@
     <Folder Include="FrontEnd\static\fonts\" />
     <Folder Include="FrontEnd\static\scripts\" />
     <Folder Include="FrontEnd\templates\" />
+    <Folder Include="FrontEnd\templates\auth\" />
     <Folder Include="instance\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FrontEnd\image\window.jpg" />
     <Content Include="FrontEnd\schema.sql" />
     <Content Include="FrontEnd\templates\comingsoon.html" />
-    <Content Include="FrontEnd\templates\login.html" />
-    <Content Include="FrontEnd\templates\register.html" />
+    <Content Include="FrontEnd\templates\auth\login.html" />
+    <Content Include="FrontEnd\templates\auth\register.html" />
     <Content Include="FrontEnd\static\content\bootstrap.css" />
     <Content Include="FrontEnd\static\content\bootstrap.min.css" />
     <Content Include="FrontEnd\static\content\site.css" />
