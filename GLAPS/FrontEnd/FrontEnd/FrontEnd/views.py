@@ -10,7 +10,7 @@ from FrontEnd import app
 @app.route('/comingsoon')
 def commingsoon():
     """
-        Renders the count down page. This page is a place holder for right now. 
+        Renders the count down page. This page is a place holder for right now.
     """
     return render_template(
         'comingsoon.html',

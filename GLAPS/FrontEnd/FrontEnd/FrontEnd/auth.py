@@ -5,7 +5,7 @@ from flask import (
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from FrontPage.db import get_db
+from FrontEnd.db import get_db
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -58,7 +58,7 @@ def register():
 
         if error is None:
             db.execute('INSERT INTO users (username, email, password) VALUES (?, ?',(username, generate_password_hash(password)))
-            db.commit() 
+            db.commit()
             return redirect(url_for('login'))
 
                     #flash(error)
