@@ -104,6 +104,13 @@ def register():
         db = get_db()
         error = None
 
+        # we're trying to add username to this command string
+        #command_string = """SELECT id FROM users WHERE username = ?", (username,)
+        #    ).fetchone() is not None:
+        #    error = "User {0} is already registered."""
+        command_string = "SELECT id from users WHERE username = ?{0}"
+        command_string = command_string.format(username)
+        print("---\ncommand_string is ", command_string, "\n---\n")
         if not username:
             error = 'Username is required.'
         elif not email:
@@ -112,13 +119,13 @@ def register():
             error = 'Password is required.'
         elif db.execute(
             'SELECT id FROM users WHERE username = ?', (username,)
-            ).fetchone() is not None:
-            error = 'User {0} is already registered.'.format(username)
+        ).fetchone() is not None:
+            error = 'User {} is already registered.'.format(username)
 
         if error is None:
-            db.execute('INSERT INTO users (username, email, password) VALUES (?, ?',(username, generate_password_hash(password)))
+            db.execute('INSERT INTO users (username, email, password) VALUES (?,?,?)',(username, email, generate_password_hash(password)))
             db.commit()
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('login'))
 
             flash(error)
 

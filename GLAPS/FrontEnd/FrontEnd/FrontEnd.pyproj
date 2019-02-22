@@ -49,7 +49,6 @@
     <Folder Include="FrontEnd\static\scripts\" />
     <Folder Include="FrontEnd\templates\" />
     <Folder Include="FrontEnd\templates\auth\" />
-    <Folder Include="instance\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FrontEnd\image\window.jpg" />
@@ -83,7 +82,6 @@
     <Content Include="FrontEnd\templates\contact.html" />
     <Content Include="FrontEnd\templates\home.html" />
     <Content Include="FrontEnd\templates\layout.html" />
-    <Content Include="instance\glapsdb.sqlite" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
