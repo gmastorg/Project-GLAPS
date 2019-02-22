@@ -1,0 +1,11 @@
+"""
+The flask application package.
+"""
+
+from flask import Flask
+app = Flask(__name__)
+
+from FrontEnd import db #seems to be working
+db.init_app(app)
+
+import FrontEnd.views
