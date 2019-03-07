@@ -33,7 +33,7 @@
     <Compile Include="FrontEnd\db.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FrontEnd\templates\module1.py">
+    <Compile Include="FrontEnd\module1.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="runserver.py" />
@@ -80,6 +80,7 @@
     <Content Include="FrontEnd\static\scripts\_references.js" />
     <Content Include="FrontEnd\templates\about.html" />
     <Content Include="FrontEnd\templates\contact.html" />
+    <Content Include="FrontEnd\templates\glaps.html" />
     <Content Include="FrontEnd\templates\home.html" />
     <Content Include="FrontEnd\templates\layout.html" />
     <Content Include="requirements.txt" />
