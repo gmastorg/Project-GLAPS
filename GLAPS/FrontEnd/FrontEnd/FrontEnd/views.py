@@ -77,7 +77,7 @@ def login():
 		db = get_db()
 		error = None
 		user = db.execute(
-			'SELECT * FROM user WHERE username = ?', (username,)
+			'SELECT * FROM users WHERE username = ?', (username,)
 		).fetchone()
 
 		if user is None:
@@ -89,7 +89,7 @@ def login():
 			# store the user id in a new session and return to the index
 			session.clear()
 			session['user_id'] = user['id']
-			return redirect(url_for('comingsoon')) #Need to change to a new screen
+			return redirect(url_for('home')) #Need to change to a new screen
 
 		flash(error)
 
@@ -103,7 +103,6 @@ def register():
         password = request.form['password']
         db = get_db()
         error = None
-
         # we're trying to add username to this command string
         #command_string = """SELECT id FROM users WHERE username = ?", (username,)
         #    ).fetchone() is not None:
