@@ -3,3 +3,7 @@
 ################################################################################
 
 /GLAPS/FrontEnd/FrontEnd/glapsdb.sqlite
+*.pyc
+*.pyc
+GLAPS/FrontEnd/FrontEnd/FrontEnd/__pycache__/views.cpython-37.pyc
+*.pyc
