@@ -3,7 +3,7 @@ import click
 from flask import current_app, g
 from flask.cli import with_appcontext
 
-sqlite_file = 'glaps.sqlite' #Needs to be changed to a data base not just a schema place holder
+sqlite_file = 'glapsdb.sqlite' #Needs to be changed to a data base not just a schema place holder
 conn = sqlite3.connect(sqlite_file)
 c = conn.cursor()
 
