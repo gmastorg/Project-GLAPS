@@ -7,6 +7,8 @@ This is a joint Cap Stone Project for Geographic Location Attribute Predictor Sy
 
 # Built With
 - Python
+- Flask
+- Bootstrap
 
 # Project Manager
 - Andrew Norris
