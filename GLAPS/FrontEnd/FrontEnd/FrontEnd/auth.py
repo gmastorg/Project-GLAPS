@@ -9,7 +9,6 @@
 
 #bp = Blueprint('auth', __name__, url_prefix='/auth')
 
-
 #def login_required(view):
 #	"""View decorator that redirects anonymous users to the login page."""
 #	@functools.wraps(view)
@@ -20,7 +19,6 @@
 #		return view(**kwargs)
 
 #	return wrapped_view
-
 
 #@bp.before_app_request
 #def load_logged_in_user():
@@ -34,7 +32,6 @@
 #		g.user = get_db().execute(
 #			'SELECT * FROM user WHERE id = ?', (user_id,)
 #		).fetchone()
-
 
 #@bp.route('/register', methods=('GET', 'POST'))
 #def register():
@@ -64,7 +61,6 @@
 #                    #flash(error)
 #    return render_template('register.html')
 
-
 #@bp.route('/login', methods=('GET', 'POST'))
 #def login():
 #	"""Log in a registered user by adding the user id to the session."""
@@ -91,7 +87,6 @@
 #		flash(error)
 
 #	return render_template('login.html')
-
 
 #@app.route('/logout')
 #def logout():

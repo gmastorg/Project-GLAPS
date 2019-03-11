@@ -11,7 +11,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from FrontEnd.db import get_db
 
 #bp = Blueprint('auth', __name__, url_prefix='/auth')
-
 from datetime import datetime
 from flask import render_template
 from FrontEnd import app
@@ -22,20 +21,16 @@ def commingsoon():
     """
         Renders the count down page. This page is a place holder for right now.
     """
-    return render_template(
-        'comingsoon.html',
+    return render_template('comingsoon.html',
         title='Coming Soon',
-        year=datetime.now().year
-    )
+        year=datetime.now().year)
 
 @app.route('/home')
 def home():
     """Renders the home page."""
-    return render_template(
-        'home.html',
+    return render_template('home.html',
         title='Home Page',
-        year=datetime.now().year
-    )
+        year=datetime.now().year)
 
 def login_required(view):
 	"""View decorator that redirects anonymous users to the login page."""
@@ -47,7 +42,6 @@ def login_required(view):
 		return view(**kwargs)
 
 	return wrapped_view
-
 
 #@app.before_app_request #'Flask' object has no attribute 'before_app_request
 #def load_logged_in_user():
@@ -61,7 +55,6 @@ def login_required(view):
 #		g.user = get_db().execute(
 #			'SELECT * FROM user WHERE id = ?', (user_id,)
 #		).fetchone()
-
 @app.route('/logout')
 def logout():
 	"""Clear the current session, including the stored user id."""
@@ -76,9 +69,7 @@ def login():
 		password = request.form['password']
 		db = get_db()
 		error = None
-		user = db.execute(
-			'SELECT * FROM users WHERE username = ?', (username,)
-		).fetchone()
+		user = db.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
 
 		if user is None:
 			error = 'Incorrect username.'
@@ -104,7 +95,8 @@ def register():
         db = get_db()
         error = None
         # we're trying to add username to this command string
-        #command_string = """SELECT id FROM users WHERE username = ?", (username,)
+        #command_string = """SELECT id FROM users WHERE username = ?",
+        #(username,)
         #    ).fetchone() is not None:
         #    error = "User {0} is already registered."""
         command_string = "SELECT id from users WHERE username = ?{0}"
@@ -116,9 +108,7 @@ def register():
             error = 'Email is required.'
         elif not password:
             error = 'Password is required.'
-        elif db.execute(
-            'SELECT id FROM users WHERE username = ?', (username,)
-        ).fetchone() is not None:
+        elif db.execute('SELECT id FROM users WHERE username = ?', (username,)).fetchone() is not None:
             error = 'User {} is already registered.'.format(username)
 
         if error is None:
@@ -133,40 +123,22 @@ def register():
 @app.route('/about')
 def about():
     """Renders the about page."""
-    return render_template(
-        'about.html',
+    return render_template('about.html',
         title='About',
         year=datetime.now().year,
-        message='Learn about Geographic Location Attribute Predictor System (GLAPS).'
-    )
+        message='Learn about Geographic Location Attribute Predictor System (GLAPS).')
 
 @app.route('/contact')
 def contact():
     """Renders the contact page."""
-    return render_template(
-        'contact.html',
+    return render_template('contact.html',
         title='Contact',
         year=datetime.now().year,
-        message='Please Contact us with any questions or concerns.'
-    )
+        message='Please Contact us with any questions or concerns.')
 
-#@app.route('/login')
-#def login():
-#    """Renders the login page."""
-#    return render_template(
-#        'login.html',
-#        title='Login',
-#        year=datetime.now().year,
-#        message='Please login to continue'
-#    )
-
-#@app.route('/register')
-#def register():
-#    """Renders the register page."""
-
-#    return render_template(
-#        'register.html',
-#        title='Register',
-#        year=datetime.now().year,
-#        message='Please register to take full advantage of GLAPS'
-#    )
+@app.route('/glaps') #this section is used for when the data bases are linked.
+def glaps():
+    return render_template('glaps.html',
+        title='Value',
+        bytearray=datetime.now().year,
+        message= 'Enter your information to display the value')

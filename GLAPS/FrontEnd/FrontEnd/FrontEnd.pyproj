@@ -83,6 +83,7 @@
     <Content Include="FrontEnd\templates\glaps.html" />
     <Content Include="FrontEnd\templates\home.html" />
     <Content Include="FrontEnd\templates\layout.html" />
+    <Content Include="glapsdb.sqlite" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
