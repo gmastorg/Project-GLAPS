@@ -51,8 +51,25 @@
     <Folder Include="FrontEnd\templates\auth\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FrontEnd\image\window.jpg" />
     <Content Include="FrontEnd\schema.sql" />
+    <Content Include="FrontEnd\static\content\animate.css" />
+    <Content Include="FrontEnd\static\content\ionicons.min.css" />
+    <Content Include="FrontEnd\static\content\owl.carousel.css" />
+    <Content Include="FrontEnd\static\content\owl.theme.css" />
+    <Content Include="FrontEnd\static\content\style.css" />
+    <Content Include="FrontEnd\static\fonts\ionicons.eot" />
+    <Content Include="FrontEnd\static\fonts\ionicons.svg" />
+    <Content Include="FrontEnd\static\fonts\ionicons.ttf" />
+    <Content Include="FrontEnd\static\fonts\ionicons.woff" />
+    <Content Include="FrontEnd\static\scripts\jquery.final-countdown.min.js" />
+    <Content Include="FrontEnd\static\scripts\jquery.min.js" />
+    <Content Include="FrontEnd\static\scripts\jquery.sticky-kit.min.js" />
+    <Content Include="FrontEnd\static\scripts\jquery.videoBG.js" />
+    <Content Include="FrontEnd\static\scripts\kinetic.js" />
+    <Content Include="FrontEnd\static\scripts\modernizr.custom.js" />
+    <Content Include="FrontEnd\static\scripts\script.js" />
+    <Content Include="FrontEnd\static\scripts\sticky.js" />
+    <Content Include="FrontEnd\static\scripts\wow.min.js" />
     <Content Include="FrontEnd\templates\comingsoon.html" />
     <Content Include="FrontEnd\templates\auth\login.html" />
     <Content Include="FrontEnd\templates\auth\register.html" />
@@ -82,6 +99,7 @@
     <Content Include="FrontEnd\templates\contact.html" />
     <Content Include="FrontEnd\templates\glaps.html" />
     <Content Include="FrontEnd\templates\home.html" />
+    <Content Include="FrontEnd\templates\test.html" />
     <Content Include="FrontEnd\templates\layout.html" />
     <Content Include="glapsdb.sqlite" />
     <Content Include="requirements.txt" />

@@ -142,3 +142,10 @@ def glaps():
         title='Value',
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
+
+@app.route('/test')
+def test():
+    return render_template('test.html',
+        title='test',
+        bytearray=datetime.now().year,
+        message= 'Enter your information to display the value')
