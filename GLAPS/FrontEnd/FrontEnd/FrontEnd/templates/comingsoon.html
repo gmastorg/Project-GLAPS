@@ -1,96 +1,429 @@
-﻿{% extends "layout.html" %}
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
 
-{% block content %}
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Cooming Soon</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<style>
-    body, html {
-        height: 100%;
-        margin: 0;
-    }
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    .bgimg {
-        background-color: white;
-        height: 90%;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        color: black;
-        font-family: "Courier New", Courier, monospace;
-        font-size: 25px;
-    }
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="static/content/base.css">
+    <link rel="stylesheet" href="static/content/main.css">
+    <link rel="stylesheet" href="static/content/vendor.css">
 
-    .topleft {
-        position: absolute;
-        top: 0;
-        left: 16px;
-    }
+    <!-- script
+    ================================================== -->
+    <script src="../static/scripts/modernizr.js"></script>
 
-    .bottomleft {
-        position: absolute;
-        bottom: 0;
-        left: 16px;
-    }
+    <!-- favicons
+     ================================================== -->
+    <link rel="icon" type="image/png" href="/static/images/g.png">
+</head>
 
-    .middle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
+<body id="top">
 
-    hr {
-        margin: auto;
-        width: 40%;
-    }
-</style>
+    <!-- header
+    ================================================== -->
+    <header>
 
-<div class="bgimg">
-    <div class="topleft">
-        <p>More to come</p>
+        <div class="row">
+            <div class="logo">
+                <a href="layout.html">Khronos</a>
+            </div>
+
+            <div class="social-links">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header> <!-- /header -->
+    <!-- home
+    ================================================== -->
+    <section id="home" class="home-particles">
+
+        <div class="shadow-overlay"></div>
+
+        <div class="content-wrap-table">
+
+            <div class="main-content-tablecell">
+
+                <div class="row">
+                    <div class="col-twelve">
+
+                        <div id="counter">
+                            <div class="half">
+                                <span>334 <sup>days</sup></span>
+                                <span>23 <sup>hours</sup></span>
+                            </div>
+                            <div class="half">
+                                <span>50 <sup>minutes</sup></span>
+                                <span>33 <sup>seconds</sup></span>
+                            </div>
+                        </div>
+
+                        <div class="bottom-text">
+                            <h1>Our site is launching soon.</h1>
+                            <p>
+                                Welcome to Geographic Location Attribute Predictor System or GLAPS
+                                please scroll down to learn more about GLAPS.
+                            </p>
+                        </div>
+                    </div> <!-- /twelve -->
+
+                    <div class="scroll-icon">
+
+                        <p class="scroll-text">Scroll For More Info</p>
+                        <a href="#info" class="smoothscroll">
+                            <div class="mouse"></div>
+                        </a>
+                        <div class="end-top"></div>
+                    </div> <!-- /scroll-icon -->
+                </div> <!-- /row -->
+            </div> <!-- /main-content -->
+        </div> <!-- /content-wrap -->
+    </section> <!-- /home -->
+    <!-- info
+    ================================================== -->
+    <section id="info">
+
+        <div class="info-overlay"></div>
+
+        <div class="row">
+            <div class="col-twelve tabs-wrap">
+
+                <ul class="tabs">
+                    <li class="active" data-id="tab-about"><i class="icon-user"></i><span>About</span></li>
+                    <li data-id="tab-contact"><i class="icon-mail"></i><span>Contact</span></li>
+                    <li data-id="tab-subscribe"><i class="icon-newspaper"></i><span>Subscribe</span></li>
+                </ul> <!-- /tabs -->
+
+                <div class="tab-container">
+
+                    <!-- tab content - about
+                    ================================================== -->
+                    <div id="tab-about" class="tab-content">
+
+                        <div class="tab-entry">
+
+                            <div class="row tab-entry-intro">
+                                <div class="col-twelve with-bottom-line">
+
+                                    <h1>Get To Know GLAPS.</h1>
+
+                                    <p class="lead">
+                                        GLAPS is a machine learning program that will take your address and home value to predict its value in the coming years.
+                                        This is a CapStone project comprised of 4 team members 2 working on front end, and 2 working on the back end from Fayetteville Technical Community College.
+                                    </p>
+                                </div>
+                            </div> <!-- /tab-content-intro -->
+
+                            <div class="row about-content tab-entry-content">
+
+                                <div class="about-list block-1-3 block-s-1-2 block-tab-full">
+
+                                    <div class="bgrid item">
+
+                                        <span class="icon"><i class="icon-mobile"></i></span>
+
+                                        <div class="item-content">
+
+                                            <h3 class="h05">Code Used</h3>
+
+                                            <p>
+                                                - Python<br /> - HTML<br /> - BootStrap
+                                            </p>
+                                        </div>
+                                    </div> <!-- /bgrid -->
+
+                                    <div class="bgrid item">
+
+                                        <span class="icon"><i class="icon-eye"></i></span>
+
+                                        <div class="item-content">
+                                            <h3 class="h05">Retina Ready</h3>
+
+                                            <p>
+                                                Need Info change header
+                                            </p>
+                                        </div>
+                                    </div> <!-- /bgrid -->
+
+                                    <div class="bgrid item">
+
+                                        <span class="icon"><i class="icon-pencil-ruler"></i></span>
+
+                                        <div class="item-content">
+                                            <h3 class="h05">Stylish Design</h3>
+
+                                            <p>
+                                                Need Info change header
+                                            </p>
+                                        </div>
+                                    </div> <!-- /bgrid -->
+
+                                    <div class="bgrid item">
+
+                                        <span class="icon"><i class="icon-objects"></i></span>
+
+                                        <div class="item-content">
+                                            <h3 class="h05">Clean Code</h3>
+
+                                            <p>
+                                                Need Info change header
+                                            </p>
+                                        </div>
+                                    </div> <!-- /bgrid -->
+
+                                    <div class="bgrid item">
+
+                                        <span class="icon"><i class="icon-sliders"></i></span>
+
+                                        <div class="item-content">
+                                            <h3 class="h05">Team Members</h3>
+
+                                            <p>
+                                                Front End<br>
+                                                Brian Schweikart<br>
+                                                Jesse Watts<br><br>
+                                                BackEnd<br>
+                                                Gaberiela Canjura<br>
+                                                Mallory Milstead<br>
+                                            </p>
+                                        </div>
+                                    </div> <!-- /bgrid -->
+
+                                    <div class="bgrid item">
+
+                                        <span class="icon"><i class="icon-gift"></i></span>
+
+                                        <div class="item-content">
+                                            <h3 class="h05">Free of Charge</h3>
+
+                                            <p>
+                                                This product is 100% free with no hidden fees. All that we ask of you is a quick and painless registration. Very little information is need. We don't even need your name.
+                                            </p>
+                                        </div>
+                                    </div> <!-- /bgrid -->
+                                </div> <!-- /about-list -->
+                            </div> <!-- /row about-content -->
+                        </div> <!-- /tab-entry -->
+                    </div> <!-- /tab-about -->
+                    <!-- tab content contact
+                    ================================================== -->
+                    <div id="tab-contact" class="tab-content">
+
+                        <div class="tab-entry">
+
+                            <div class="row tab-entry-intro">
+                                <div class="col-twelve with-bottom-line">
+
+                                    <h1>Get In Touch.</h1>
+
+                                    <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+                                </div>
+                            </div> <!-- /tab-content-intro -->
+
+                            <div class="row form-wrap tab-entry-content">
+                                <div class="col-twelve">
+
+                                    <!-- form -->
+                                    <form name="contactForm" id="contactForm" method="post" action="">
+                                        <fieldset>
+
+                                            <div class="form-field">
+                                                <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+                                            </div>
+                                            <div class="form-field">
+                                                <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+                                            </div>
+                                            <div class="form-field">
+                                                <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
+                                            </div>
+                                            <div class="form-field">
+                                                <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
+                                            </div>
+                                            <div class="form-field">
+                                                <button class="submitForm button button-primary large">Submit</button>
+
+                                                <div id="submit-loader">
+                                                    <div class="text-loader">Sending...</div>
+                                                    <div class="s-loader">
+                                                        <div class="bounce1"></div>
+                                                        <div class="bounce2"></div>
+                                                        <div class="bounce3"></div>
+                                                    </div>
+                                                </div><!-- submit-loader -->
+                                            </div>
+                                        </fieldset>
+                                    </form> <!-- /form -->
+                                    <!-- contact-warning -->
+                                    <div id="message-warning">
+                                    </div>
+                                    <!-- contact-success -->
+                                    <div id="message-success">
+                                        <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+                                    </div>
+                                </div> <!-- /col-twelve -->
+                            </div> <!-- /row contact-form -->
+                        </div> <!-- /tab-entry -->
+                    </div> <!-- /tab-contact -->
+                    <!-- tab content - subscribe
+                    ================================================== -->
+                    <div id="tab-subscribe" class="tab-content">
+
+                        <div class="tab-entry">
+
+                            <div class="row tab-entry-intro">
+                                <div class="col-twelve with-bottom-line">
+
+                                    <h1>Subcribe To Our Newsletter.</h1>
+
+                                    <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+                                </div>
+                            </div> <!-- /tab-content-intro -->
+
+                            <div class="row form-wrap tab-entry-content">
+                                <div class="col-twelve">
+
+                                    <form id="mc-form" class="group" novalidate="true">
+
+                                        <div class="form-field">
+                                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+                                        </div>
+
+                                        <div class="form-field">
+                                            <input type="submit" value="Get Notified" name="subscribe" class="button button-primary large">
+                                        </div>
+
+                                        <label for="mce-EMAIL" class="subscribe-message"></label>
+                                    </form>
+                                </div> <!-- /twelve -->
+                            </div> <!-- subscribe-form -->
+                        </div> <!-- /tab-entry -->
+                    </div> <!-- /tab-subscribe -->
+                </div> <!-- /tab-container -->
+            </div> <!-- twelve -->
+        </div> <!-- row -->
+    </section> <!-- /info -->
+    <!-- CTA Section
+    ================================================== -->
+    <section id="cta">
+
+        <div class="row cta-wrap">
+
+            <div class="col-twelve cta-content">
+
+                <h2 class="h01">Welcome to GlAPS</h2>
+
+                <p class="lead">
+                    Do you want to take full advantage of GLAPS, well first you have to register!
+                </p>
+
+                <div class="action">
+                    <a class="button large" href="{{ url_for('register') }}">Sign Up Now</a>
+                </div>
+            </div>
+        </div> <!-- /cta-content -->
+    </section> <!-- /cta -->
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="social-wrap">
+            <div class="row">
+
+                <ul class="footer-social-list">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-facebook"></i><span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-twitter"></i><span>Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/BSchweikart/Project-GLAPS/tree/master">
+                            <i class="fa fa-github"></i><span>GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </div> <!-- /row -->
+        </div> <!-- /social-wrap -->
+
+        <div class="footer-bottom">
+
+            <div class="footer-logo">
+                <img src="images/footer-logo.png" alt="">
+            </div>
+
+            <div class="copyright">
+                <span>© Copyright Khronos 2016.</span>
+                <span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>
+            </div>
+        </div> <!-- /footer-bottom -->
+
+        <div class="back-to-top">
+            <a href="#top" class="smoothscroll"><span>Back to Top</span></a>
+        </div>
+    </footer>
+
+    <div id="preloader">
+        <div id="loader"></div>
     </div>
-    <div class="middle">
-        <h1>COMING SOON</h1>
-        <hr>
-        <p id="countdown" style="font-size:30px"></p>
-        <p> We are working hard to bring you something special</p>
-    </div>
-    <div class="bottomleft">
-        <p>
-            <a href="https://github.com/BSchweikart/Project-GLAPS"><i class="fab fa-github">&nbsp;</i>Github</a> <!--need to add in github pic and resize-->
-        </p>
-    </div>
-</div>
 
-<script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("May 11, 2019 00:00:00").getTime();
+    <!-- Java Script
+    ================================================== -->
+    <script src="../static/scripts/jquery-2.1.3.min.js"></script>
+    <script src="../static/scripts/plugins.js"></script>
+    <script src="../static/scripts/main.js"></script>
 
-    // Update the count down every 1 second
-    var countdownfunction = setInterval(function () {
+    <script>
+        //Need to call this into ID counter
+        // Set the date we're counting down to
+        var countDownDate = new Date("May 11, 2019 00:00:00").getTime();
 
-        // Get todays date and time
-        var now = new Date().getTime();
+        // Update the count down every 1 second
+        var countdownfunction = setInterval(function () {
 
-        // Find the distance between now an the count down date
-        var distance = countDownDate - now;
+            // Get todays date and time
+            var now = new Date().getTime();
 
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
 
-        // Output the result in an element with id="demo"
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // If the count down is over, write some text
-        if (distance < 0) {
-            clearInterval(countdownfunction);
-            document.getElementById("countdown").innerHTML = "EXPIRED";
-        }
-    }, 1000);
-</script>
+            // Output the result in an element with id="demo"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
 
-{% endblock %}
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

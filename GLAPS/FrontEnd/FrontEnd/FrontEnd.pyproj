@@ -45,6 +45,11 @@
     <Folder Include="FrontEnd\image\" />
     <Folder Include="FrontEnd\static\" />
     <Folder Include="FrontEnd\static\content\" />
+    <Folder Include="FrontEnd\static\content\kreo\" />
+    <Folder Include="FrontEnd\static\content\kreo\css\" />
+    <Folder Include="FrontEnd\static\content\kreo\css\font-awesome\" />
+    <Folder Include="FrontEnd\static\content\kreo\css\font-awesome\css\" />
+    <Folder Include="FrontEnd\static\content\kreo\css\font-awesome\fonts\" />
     <Folder Include="FrontEnd\static\fonts\" />
     <Folder Include="FrontEnd\static\fonts\font-awesome\" />
     <Folder Include="FrontEnd\static\fonts\font-awesome\css\" />
@@ -52,9 +57,10 @@
     <Folder Include="FrontEnd\static\fonts\micons\" />
     <Folder Include="FrontEnd\static\fonts\micons\fonts\" />
     <Folder Include="FrontEnd\static\images\" />
-    <Folder Include="FrontEnd\static\images\demo\" />
     <Folder Include="FrontEnd\static\images\slides\" />
     <Folder Include="FrontEnd\static\scripts\" />
+    <Folder Include="FrontEnd\static\scripts\kreo\" />
+    <Folder Include="FrontEnd\static\scripts\kreo\js\" />
     <Folder Include="FrontEnd\templates\" />
     <Folder Include="FrontEnd\templates\auth\" />
   </ItemGroup>
@@ -65,6 +71,18 @@
     <Content Include="FrontEnd\static\content\fonts.css" />
     <Content Include="FrontEnd\static\content\ionicons.min.css" />
     <Content Include="FrontEnd\static\content\main.css" />
+    <Content Include="FrontEnd\static\content\kreo\css\base.css" />
+    <Content Include="FrontEnd\static\content\kreo\css\font-awesome\css\font-awesome.css" />
+    <Content Include="FrontEnd\static\content\kreo\css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="FrontEnd\static\content\kreo\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="FrontEnd\static\content\kreo\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="FrontEnd\static\content\kreo\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="FrontEnd\static\content\kreo\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="FrontEnd\static\content\kreo\css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="FrontEnd\static\content\kreo\css\fonts.css" />
+    <Content Include="FrontEnd\static\content\kreo\css\main.css" />
+    <Content Include="FrontEnd\static\content\kreo\css\vendor.css" />
+    <Content Include="FrontEnd\static\content\kreo\css\vendor.min.css" />
     <Content Include="FrontEnd\static\content\owl.carousel.css" />
     <Content Include="FrontEnd\static\content\owl.theme.css" />
     <Content Include="FrontEnd\static\content\style.css" />
@@ -85,7 +103,6 @@
     <Content Include="FrontEnd\static\fonts\micons\fonts\icomoon.ttf" />
     <Content Include="FrontEnd\static\fonts\micons\fonts\icomoon.woff" />
     <Content Include="FrontEnd\static\fonts\micons\micons.css" />
-    <Content Include="FrontEnd\static\images\demo\demo-particles.jpg" />
     <Content Include="FrontEnd\static\images\footer-logo.png" />
     <Content Include="FrontEnd\static\images\g.png" />
     <Content Include="FrontEnd\static\images\home-bg.jpg" />
@@ -100,6 +117,16 @@
     <Content Include="FrontEnd\static\scripts\jquery.sticky-kit.min.js" />
     <Content Include="FrontEnd\static\scripts\jquery.videoBG.js" />
     <Content Include="FrontEnd\static\scripts\kinetic.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\jquery-1.11.3.min.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\jquery.fittext.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\jquery.flexslider-min.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\jquery.magnific-popup.min.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\jquery.placeholder.min.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\jquery.validate.min.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\jquery.waypoints.min.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\main.js" />
+    <Content Include="FrontEnd\static\scripts\kreo\js\modernizr.js" />
     <Content Include="FrontEnd\static\scripts\main.js" />
     <Content Include="FrontEnd\static\scripts\modernizr.custom.js" />
     <Content Include="FrontEnd\static\scripts\modernizr.js" />
@@ -107,7 +134,7 @@
     <Content Include="FrontEnd\static\scripts\script.js" />
     <Content Include="FrontEnd\static\scripts\sticky.js" />
     <Content Include="FrontEnd\static\scripts\wow.min.js" />
-    <Content Include="FrontEnd\templates\comingsoon.html" />
+    <Content Include="FrontEnd\templates\backup.html" />
     <Content Include="FrontEnd\templates\auth\login.html" />
     <Content Include="FrontEnd\templates\auth\register.html" />
     <Content Include="FrontEnd\static\content\bootstrap.css" />
@@ -136,8 +163,9 @@
     <Content Include="FrontEnd\templates\contact.html" />
     <Content Include="FrontEnd\templates\glaps.html" />
     <Content Include="FrontEnd\templates\home.html" />
-    <Content Include="FrontEnd\templates\layout.html" />
     <Content Include="FrontEnd\templates\test.html" />
+    <Content Include="FrontEnd\templates\layout.html" />
+    <Content Include="FrontEnd\templates\comingsoon.html" />
     <Content Include="glapsdb.sqlite" />
     <Content Include="requirements.txt" />
   </ItemGroup>

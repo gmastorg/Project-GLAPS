@@ -9,7 +9,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Cooming Soon</title>
+    <title>GLAPS-Home</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -19,370 +19,846 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="static/content/base.css">
-    <link rel="stylesheet" href="static/content/main.css">
-    <link rel="stylesheet" href="static/content/vendor.css">
+    <link rel="stylesheet" href="../static/content/kreo/css/base.css">
+    <link rel="stylesheet" href="../static/content/kreo/css/vendor.min.css">
+    <link rel="stylesheet" href="../static/content/kreo/css/main.css">
 
     <!-- script
     ================================================== -->
-    <script src="../static/scripts/modernizr.js"></script>
+    <script src="../static/scripts/kreo/js/modernizr.js"></script>
 
     <!-- favicons
      ================================================== -->
     <link rel="icon" type="image/png" href="/static/images/g.png">
 </head>
 
-<body id="top">
+<body>
 
     <!-- header
     ================================================== -->
-    <header>
+    <header id="main-header">
 
         <div class="row">
+
             <div class="logo">
-                <a href="layout.html">Khronos</a>
+                <a href="index.html">Kreo</a>
             </div>
 
-            <div class="social-links">
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-github"></i></a></li>
-                </ul>
-            </div>
+            <nav id="nav-wrap">
+
+                <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                    <span class="menu-icon">Menu</span>
+                </a>
+                <a class="mobile-btn" href="#" title="Hide navigation">
+                    <span class="menu-icon">Menu</span>
+                </a>
+
+                <ul id="nav" class="nav">
+                    <li><a class="smoothscroll" href="#hero">Home.</a></li>
+                    <li class="current"><a class="smoothscroll" href="#portfolio">Works.</a></li>
+                    <li><a class="smoothscroll" href="#services">Services.</a></li>
+                    <li><a class="smoothscroll" href="#about">About.</a></li>
+                    <li><a class="smoothscroll" href="#contact">Contact.</a></li>
+                </ul> <!-- end #nav -->
+            </nav> <!-- end #nav-wrap -->
+
+            <ul class="header-social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://github.com/BSchweikart/Project-GLAPS/tree/master"><i class="fa fa-github"></i></a></li>
+            </ul>
         </div>
-    </header> <!-- /header -->
-    <!-- home
+    </header> <!-- end header -->
+    <!-- homepage hero
     ================================================== -->
-    <section id="home" class="home-particles">
+    <section id="hero">
 
-        <div class="shadow-overlay"></div>
+        <div class="row hero-content">
 
-        <div class="content-wrap-table">
+            <div class="twelve columns hero-container">
 
-            <div class="main-content-tablecell">
+                <!-- hero-slider start-->
+                <div id="hero-slider" class="flexslider">
 
-                <div class="row">
-                    <div class="col-twelve">
+                    <ul class="slides">
 
-                        <div id="counter">
-                            <div class="half">
-                                <span>334 <sup>days</sup></span>
-                                <span>23 <sup>hours</sup></span>
+                        <!-- slide -->
+                        <li>
+                            <div class="flex-caption">
+                                <h1 class="">
+                                    Say hello to <span>Kreo</span>. We create awesome and stunning
+                                    digital solutions.
+                                </h1>
+
+                                <h3 class="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</h3>
                             </div>
-                            <div class="half">
-                                <span>50 <sup>minutes</sup></span>
-                                <span>33 <sup>seconds</sup></span>
+                        </li>
+
+                        <!-- slide -->
+                        <li>
+                            <div class="flex-caption">
+                                <h1 class="">
+                                    We are a small design studio dedicated to build great digital
+                                    products.
+                                </h1>
+
+                                <h3 class="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</h3>
                             </div>
-                        </div>
+                        </li>
 
-                        <div class="bottom-text">
-                            <h1>Our site is launching soon.</h1>
-                            <p>
-                                Welcome to Geographic Location Attribute Predictor System or GLAPS
-                                please scroll down to learn more about GLAPS.
-                            </p>
-                        </div>
-                    </div> <!-- /twelve -->
+                        <!-- slide -->
+                        <li>
+                            <div class="flex-caption">
+                                <h1 class="">
+                                    Take a look at some of <a class="smoothscroll" href="#portfolio" title="portfolio">our works</a> or
+                                    <a class="smoothscroll" href="#contact" title="contact us">get in touch</a> to discuss how we can help you.
+                                </h1>
 
-                    <div class="scroll-icon">
+                                <h3 class="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div> <!-- end hero-slider -->
+            </div> <!-- end twelve columns-->
+        </div> <!-- end row -->
 
-                        <p class="scroll-text">Scroll For More Info</p>
-                        <a href="#info" class="smoothscroll">
-                            <div class="mouse"></div>
+        <div id="more">
+            <a class="smoothscroll" href="#services">More About Us<i class="fa fa-angle-down"></i></a>
+        </div>
+    </section> <!-- end homepage hero -->
+    <!-- portfolio
+    ================================================== -->
+    <section id="portfolio">
+
+        <div class="row section-head">
+
+            <div class="twelve columns">
+
+                <h1>Our Latest Projects<span>.</span></h1>
+
+                <hr />
+
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                </p>
+            </div>
+        </div> <!-- end section-head -->
+
+        <div class="row items">
+
+            <!-- portfolio-wrapper -->
+            <div id="portfolio-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half">
+
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <a href="#modal-01">
+                            <img src="images/portfolio/underwater.jpg" alt="Underwater">
+                            <div class="overlay"></div>
+                            <div class="portfolio-item-meta">
+                                <h5>Underwater</h5>
+                                <p>Videography</p>
+                            </div>
+                            <div class="link-icon"><i class="fa fa-plus"></i></div>
                         </a>
-                        <div class="end-top"></div>
-                    </div> <!-- /scroll-icon -->
-                </div> <!-- /row -->
-            </div> <!-- /main-content -->
-        </div> <!-- /content-wrap -->
-    </section> <!-- /home -->
-    <!-- info
-    ================================================== -->
-    <section id="info">
+                    </div>
+                </div> <!-- item end -->
 
-        <div class="info-overlay"></div>
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <a href="#modal-02">
+                            <img src="images/portfolio/hotel.jpg" alt="Hotel Sign">
+                            <div class="overlay">
+                                <div class="portfolio-item-meta">
+                                    <h5>Hotel Sign</h5>
+                                    <p>Branding</p>
+                                </div>
+                            </div>
+                            <div class="link-icon"><i class="fa fa-plus"></i></div>
+                        </a>
+                    </div>
+                </div> <!-- item end -->
+
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <a href="#modal-03">
+                            <img src="images/portfolio/beetle.jpg" alt="Beetle">
+                            <div class="overlay">
+                                <div class="portfolio-item-meta">
+                                    <h5>Beetle</h5>
+                                    <p>Webdesign</p>
+                                </div>
+                            </div>
+                            <div class="link-icon"><i class="fa fa-plus"></i></div>
+                        </a>
+                    </div>
+                </div> <!-- item end -->
+
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <a href="#modal-04">
+                            <img src="images/portfolio/banjo-player.jpg" alt="Banjo Player">
+                            <div class="overlay">
+                                <div class="portfolio-item-meta">
+                                    <h5>Banjo Player</h5>
+                                    <p>Photography</p>
+                                </div>
+                            </div>
+                            <div class="link-icon"><i class="fa fa-plus"></i></div>
+                        </a>
+                    </div>
+                </div> <!-- item end -->
+
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <a href="#modal-05">
+                            <img src="images/portfolio/lighthouse.jpg" alt="Lighthouse">
+                            <div class="overlay">
+                                <div class="portfolio-item-meta">
+                                    <h5>Lighthouse</h5>
+                                    <p>Web Development</p>
+                                </div>
+                            </div>
+                            <div class="link-icon"><i class="fa fa-plus"></i></div>
+                        </a>
+                    </div>
+                </div> <!-- item end -->
+
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <a href="#modal-06">
+                            <img src="images/portfolio/girl.jpg" alt="Girl Stuff">
+                            <div class="overlay">
+                                <div class="portfolio-item-meta">
+                                    <h5>Girl Stuff</h5>
+                                    <p>Photography</p>
+                                </div>
+                            </div>
+                            <div class="link-icon"><i class="fa fa-plus"></i></div>
+                        </a>
+                    </div>
+                </div> <!-- item end -->
+
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <a href="#modal-07">
+                            <img src="images/portfolio/coffee.jpg" alt="Coffee Cup">
+                            <div class="overlay">
+                                <div class="portfolio-item-meta">
+                                    <h5>Coffee Cup</h5>
+                                    <p>Branding</p>
+                                </div>
+                            </div>
+                            <div class="link-icon"><i class="fa fa-plus"></i></div>
+                        </a>
+                    </div>
+                </div> <!-- item end -->
+
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <a href="#modal-08">
+                            <img src="images/portfolio/judah.jpg" alt="Judah">
+                            <div class="overlay">
+                                <div class="portfolio-item-meta">
+                                    <h5>Judah</h5>
+                                    <p>Webdesign</p>
+                                </div>
+                            </div>
+                            <div class="link-icon"><i class="fa fa-plus"></i></div>
+                        </a>
+                    </div>
+                </div>  <!-- item end -->
+            </div> <!-- end portfolio-wrapper -->
+            <!-- modal popup
+            ========================================================= -->
+            <div id="modal-01" class="popup-modal mfp-hide">
+
+                <div class="media">
+                    <img src="images/portfolio/modals/m-underwater.jpg" alt="Underwater" />
+                </div>
+
+                <div class="description-box">
+                    <h4>Underwater</h4>
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                    <span class="categories">Videography</span>
+                </div>
+
+                <div class="link-box group">
+                    <a href="http://www.behance.net">Details</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div><!-- modal-01 end -->
+
+            <div id="modal-02" class="popup-modal mfp-hide">
+
+                <div class="media">
+                    <img src="images/portfolio/modals/m-hotel.jpg" alt="Hotel Sign" />
+                </div>
+
+                <div class="description-box">
+                    <h4>Hotel Sign</h4>
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                    <span class="categories">Branding, Web Development</span>
+                </div>
+
+                <div class="link-box">
+                    <a href="http://www.behance.net">Details</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div><!-- modal-02 end -->
+
+            <div id="modal-03" class="popup-modal mfp-hide">
+
+                <div class="media">
+                    <img src="images/portfolio/modals/m-beetle.jpg" alt="" />
+                </div>
+
+                <div class="description-box">
+                    <h4>Beetle</h4>
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                    <span class="categories">Webdesign</span>
+                </div>
+
+                <div class="link-box">
+                    <a href="http://www.behance.net">Details</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div><!-- modal-03 end -->
+
+            <div id="modal-04" class="popup-modal mfp-hide">
+
+                <div class="media">
+                    <img src="images/portfolio/modals/m-banjo-player.jpg" alt="" />
+                </div>
+
+                <div class="description-box">
+                    <h4>Banjo Player</h4>
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                    <span class="categories">Photography</span>
+                </div>
+
+                <div class="link-box">
+                    <a href="http://www.behance.net">Details</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div><!-- modal-04 end -->
+
+            <div id="modal-05" class="popup-modal slider mfp-hide">
+
+                <div class="media">
+                    <img src="images/portfolio/modals/m-lighthouse.jpg" alt="" />
+                </div>
+
+                <div class="description-box">
+                    <h4>Lighthouse</h4>
+
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+                    <div class="categories">Web Development</div>
+                </div>
+
+                <div class="link-box">
+                    <a href="http://www.behance.net">Details</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div><!-- modal-05 end -->
+
+            <div id="modal-06" class="popup-modal mfp-hide">
+
+                <div class="media">
+                    <img src="images/portfolio/modals/m-girl.jpg" alt="" />
+                </div>
+
+                <div class="description-box">
+                    <h4>Girl Stuff</h4>
+
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+                    <div class="categories">Photography</div>
+                </div>
+
+                <div class="link-box">
+                    <a href="http://www.behance.net">Details</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div><!-- modal-06 end -->
+
+            <div id="modal-07" class="popup-modal mfp-hide">
+
+                <div class="media">
+                    <img src="images/portfolio/modals/m-coffee.jpg" alt="" />
+                </div>
+
+                <div class="description-box">
+                    <h4>Coffee Cup</h4>
+
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+                    <div class="categories">Branding</div>
+                </div>
+
+                <div class="link-box">
+                    <a href="http://www.behance.net">Details</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div><!-- modal-07 end -->
+
+            <div id="modal-08" class="popup-modal mfp-hide">
+
+                <div class="media">
+                    <img src="images/portfolio/modals/m-judah.jpg" alt="" />
+                </div>
+
+                <div class="description-box">
+                    <h4>Judah</h4>
+
+                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+                    <div class="categories">Webdesign</div>
+                </div>
+
+                <div class="link-box">
+                    <a href="http://www.behance.net">Details</a>
+                    <a href="#" class="popup-modal-dismiss">Close</a>
+                </div>
+            </div><!-- modal-08 end -->
+        </div>  <!-- end row -->
+    </section> <!-- end portfolio -->
+    <!-- Services Section
+    ================================================== -->
+    <section id="services">
+
+        <div class="row section-head">
+
+            <div class="twelve columns">
+
+                <h1>Our Awesome Services<span>.</span></h1>
+
+                <hr />
+
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                </p>
+            </div>
+        </div> <!-- end section-head -->
+
+        <div class="row mobile-no-padding">
+
+            <div class="service-list bgrid-third s-bgrid-half tab-bgrid-whole group">
+
+                <div class="bgrid">
+
+                    <h3>Marketing.</h3>
+
+                    <div class="service-content">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+                    </div>
+                </div> <!-- end bgrid -->
+
+                <div class="bgrid">
+
+                    <h3>Videography.</h3>
+
+                    <div class="service-content">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+                    </div>
+                </div> <!-- end bgrid -->
+
+                <div class="bgrid">
+
+                    <h3>Photography.</h3>
+
+                    <div class="service-content">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+                    </div>
+                </div> <!-- end bgrid -->
+
+                <div class="bgrid">
+
+                    <h3>Branding.</h3>
+
+                    <div class="service-content">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+                    </div>
+                </div> <!-- end bgrid -->
+
+                <div class="bgrid">
+
+                    <h3>Web Design.</h3>
+
+                    <div class="service-content">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+                    </div>
+                </div> <!-- end bgrid -->
+
+                <div class="bgrid">
+
+                    <h3>Web Development.</h3>
+
+                    <div class="service-content">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+                    </div>
+                </div> <!-- end bgrid -->
+            </div> <!-- end service-list -->
+        </div> <!-- end row -->
+    </section> <!-- end services -->
+    <!-- About Section
+    ================================================== -->
+    <section id="about">
+
+        <div class="row section-head">
+
+            <div class="twelve columns">
+
+                <h1>Who Are We<span>.</span></h1>
+
+                <hr />
+
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                </p>
+            </div> <!-- end section-head -->
+        </div>
+
+        <div class="row mobile-no-padding">
+
+            <div class="process bgrid-half tab-bgrid-whole group">
+
+                <div class="bgrid">
+
+                    <h3>Our Process.</h3>
+
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                    </p>
+                </div>
+
+                <div class="bgrid">
+
+                    <h3>Our Approach.</h3>
+
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                    </p>
+                </div>
+
+                <div class="bgrid">
+
+                    <h3>Our Goal.</h3>
+
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                    </p>
+                </div>
+
+                <div class="bgrid">
+
+                    <h3>Our Mission.</h3>
+
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                    </p>
+                </div>
+            </div> <!-- end process -->
+        </div> <!-- end row -->
+
+        <div class="row team section-head">
+
+            <div class="twelve columns">
+
+                <h1>Meet Our Team<span>.</span></h1>
+
+                <hr />
+            </div>
+        </div> <!-- end section-head -->
 
         <div class="row">
-            <div class="col-twelve tabs-wrap">
 
-                <ul class="tabs">
-                    <li class="active" data-id="tab-about"><i class="icon-user"></i><span>About</span></li>
-                    <li data-id="tab-contact"><i class="icon-mail"></i><span>Contact</span></li>
-                    <li data-id="tab-subscribe"><i class="icon-newspaper"></i><span>Subscribe</span></li>
-                </ul> <!-- /tabs -->
+            <div id="team-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half mob-bgrid-whole group">
 
-                <div class="tab-container">
+                <div class="bgrid member">
 
-                    <!-- tab content - about
-                    ================================================== -->
-                    <div id="tab-about" class="tab-content">
+                    <div class="member-pic">
+                        <img src="images/team/member01-k.jpg" alt="" />
+                        <div class="mask"></div>
+                    </div>
+                    <div class="member-name">
+                        <h3>Gaberiela Canjura</h3>
+                        <span>GLAPS Engineer</span>
+                    </div>
 
-                        <div class="tab-entry">
+                    <p>
+                        Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                        nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                    </p>
 
-                            <div class="row tab-entry-intro">
-                                <div class="col-twelve with-bottom-line">
+                    <ul class="member-social">
+                        <li><a href="https://github.com/gmastorg"><i class="fa fa-github"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div> <!-- end member -->
 
-                                    <h1>Get To Know GLAPS.</h1>
+                <div class="bgrid member">
 
-                                    <p class="lead">
-                                        GLAPS is a machine learning program that will take your address and home value to predict its value in the coming years.
-                                        This is a CapStone project comprised of 4 team members 2 working on front end, and 2 working on the back end from Fayetteville Technical Community College.
-                                    </p>
-                                </div>
-                            </div> <!-- /tab-content-intro -->
+                    <div class="member-pic">
+                        <img src="images/team/member03-k.jpg" alt="" />
+                        <div class="mask"></div>
+                    </div>
+                    <div class="member-name">
+                        <h3>Mallory Milstead</h3>
+                        <span>GLAPS Engineer</span>
+                    </div>
 
-                            <div class="row about-content tab-entry-content">
+                    <p>
+                        Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                        nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                    </p>
 
-                                <div class="about-list block-1-3 block-s-1-2 block-tab-full">
+                    <ul class="member-social">
+                        <li><a href="https://github.com/milsteam4144"><i class="fa fa-github"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div> <!-- end member -->
 
-                                    <div class="bgrid item">
+                <div class="bgrid member">
 
-                                        <span class="icon"><i class="icon-mobile"></i></span>
+                    <div class="member-pic">
+                        <img src="images/team/member04-k.jpg" alt="" />
+                        <div class="mask"></div>
+                    </div>
+                    <div class="member-name">
+                        <h3>Jesse Watts</h3>
+                        <span>Web Designer</span>
+                    </div>
 
-                                        <div class="item-content">
+                    <p>
+                        Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                        nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                    </p>
 
-                                            <h3 class="h05">Code Used</h3>
+                    <ul class="member-social">
+                        <li><a href="https://github.com/JesseWatts"><i class="fa fa-github"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div> <!-- end member -->
 
-                                            <p>
-                                                - Python<br /> - HTML<br /> - BootStrap
-                                            </p>
-                                        </div>
-                                    </div> <!-- /bgrid -->
+                <div class="bgrid member">
 
-                                    <div class="bgrid item">
+                    <div class="member-pic">
+                        <img src="images/team/member05-k.jpg" alt="" />
+                        <div class="mask"></div>
+                    </div>
+                    <div class="member-name">
+                        <h3>Brian Schweikart</h3>
+                        <span>Web Designer</span>
+                    </div>
 
-                                        <span class="icon"><i class="icon-eye"></i></span>
+                    <p>
+                        Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+                        nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                    </p>
 
-                                        <div class="item-content">
-                                            <h3 class="h05">Retina Ready</h3>
+                    <ul class="member-social">
+                        <li><a href="https://github.com/BSchweikart"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/bschweikart"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div> <!-- end member -->
+            </div> <!-- end team-wrapper -->
+        </div> <!-- end row -->
 
-                                            <p>
-                                                Need Info change header
-                                            </p>
-                                        </div>
-                                    </div> <!-- /bgrid -->
+        <div id="call-to-action">
 
-                                    <div class="bgrid item">
+            <div class="row section-ads">
 
-                                        <span class="icon"><i class="icon-pencil-ruler"></i></span>
+                <div class="twelve columns">
 
-                                        <div class="item-content">
-                                            <h3 class="h05">Stylish Design</h3>
+                    <h2><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost<span>.</span></a></h2>
 
-                                            <p>
-                                                Need Info change header
-                                            </p>
-                                        </div>
-                                    </div> <!-- /bgrid -->
+                    <p>
+                        Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
+                        Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
+                        <!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->
+                    </p>
 
-                                    <div class="bgrid item">
-
-                                        <span class="icon"><i class="icon-objects"></i></span>
-
-                                        <div class="item-content">
-                                            <h3 class="h05">Clean Code</h3>
-
-                                            <p>
-                                                Need Info change header
-                                            </p>
-                                        </div>
-                                    </div> <!-- /bgrid -->
-
-                                    <div class="bgrid item">
-
-                                        <span class="icon"><i class="icon-sliders"></i></span>
-
-                                        <div class="item-content">
-                                            <h3 class="h05">Team Members</h3>
-
-                                            <p>
-                                                Front End<br>
-                                                Brian Schweikart<br>
-                                                Jesse Watts<br><br>
-                                                BackEnd<br>
-                                                Gaberiela Canjura<br>
-                                                Mallory Milstead<br>
-                                            </p>
-                                        </div>
-                                    </div> <!-- /bgrid -->
-
-                                    <div class="bgrid item">
-
-                                        <span class="icon"><i class="icon-gift"></i></span>
-
-                                        <div class="item-content">
-                                            <h3 class="h05">Free of Charge</h3>
-
-                                            <p>
-                                                This product is 100% free with no hidden fees. All that we ask of you is a quick and painless registration. Very little information is need. We don't even need your name.
-                                            </p>
-                                        </div>
-                                    </div> <!-- /bgrid -->
-                                </div> <!-- /about-list -->
-                            </div> <!-- /row about-content -->
-                        </div> <!-- /tab-entry -->
-                    </div> <!-- /tab-about -->
-                    <!-- tab content contact
-                    ================================================== -->
-                    <div id="tab-contact" class="tab-content">
-
-                        <div class="tab-entry">
-
-                            <div class="row tab-entry-intro">
-                                <div class="col-twelve with-bottom-line">
-
-                                    <h1>Get In Touch.</h1>
-
-                                    <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-                                </div>
-                            </div> <!-- /tab-content-intro -->
-
-                            <div class="row form-wrap tab-entry-content">
-                                <div class="col-twelve">
-
-                                    <!-- form -->
-                                    <form name="contactForm" id="contactForm" method="post" action="">
-                                        <fieldset>
-
-                                            <div class="form-field">
-                                                <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-                                            </div>
-                                            <div class="form-field">
-                                                <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-                                            </div>
-                                            <div class="form-field">
-                                                <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-                                            </div>
-                                            <div class="form-field">
-                                                <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-                                            </div>
-                                            <div class="form-field">
-                                                <button class="submitForm button button-primary large">Submit</button>
-
-                                                <div id="submit-loader">
-                                                    <div class="text-loader">Sending...</div>
-                                                    <div class="s-loader">
-                                                        <div class="bounce1"></div>
-                                                        <div class="bounce2"></div>
-                                                        <div class="bounce3"></div>
-                                                    </div>
-                                                </div><!-- submit-loader -->
-                                            </div>
-                                        </fieldset>
-                                    </form> <!-- /form -->
-                                    <!-- contact-warning -->
-                                    <div id="message-warning">
-                                    </div>
-                                    <!-- contact-success -->
-                                    <div id="message-success">
-                                        <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-                                    </div>
-                                </div> <!-- /col-twelve -->
-                            </div> <!-- /row contact-form -->
-                        </div> <!-- /tab-entry -->
-                    </div> <!-- /tab-contact -->
-                    <!-- tab content - subscribe
-                    ================================================== -->
-                    <div id="tab-subscribe" class="tab-content">
-
-                        <div class="tab-entry">
-
-                            <div class="row tab-entry-intro">
-                                <div class="col-twelve with-bottom-line">
-
-                                    <h1>Subcribe To Our Newsletter.</h1>
-
-                                    <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-                                </div>
-                            </div> <!-- /tab-content-intro -->
-
-                            <div class="row form-wrap tab-entry-content">
-                                <div class="col-twelve">
-
-                                    <form id="mc-form" class="group" novalidate="true">
-
-                                        <div class="form-field">
-                                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
-                                        </div>
-
-                                        <div class="form-field">
-                                            <input type="submit" value="Get Notified" name="subscribe" class="button button-primary large">
-                                        </div>
-
-                                        <label for="mce-EMAIL" class="subscribe-message"></label>
-                                    </form>
-                                </div> <!-- /twelve -->
-                            </div> <!-- subscribe-form -->
-                        </div> <!-- /tab-entry -->
-                    </div> <!-- /tab-subscribe -->
-                </div> <!-- /tab-container -->
-            </div> <!-- twelve -->
-        </div> <!-- row -->
-    </section> <!-- /info -->
-    <!-- CTA Section
+                    <div class="action">
+                        <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
+                    </div>
+                </div>
+            </div> <!-- end section-ads -->
+        </div> <!-- end call-to-action -->
+    </section> <!-- end about -->
+    <!-- Testimonials Section
     ================================================== -->
-    <section id="cta">
+    <section id="testimonials">
 
-        <div class="row cta-wrap">
+        <div class="row content flex-container">
 
-            <div class="col-twelve cta-content">
+            <div id="testimonial-slider" class="flexslider">
 
-                <h2 class="h01">Welcome to GlAPS</h2>
+                <ul class="slides">
+                    <li>
+                        <p>
+                            Your work is going to fill a large part of your life, and the only way to be truly satisfied is
+                            to do what you believe is great work. And the only way to do great work is to love what you do.
+                            If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.
+                        </p>
 
-                <p class="lead">
-                    Do you want to take full advantage of GLAPS, well first you have to register!
-                </p>
+                        <div class="testimonial-author">
+                            <img src="images/avatars/avatar-1.jpg" alt="Author image">
+                            <div class="author-info">
+                                Steve Jobs
+                                <span class="position">CEO, Apple.</span>
+                            </div>
+                        </div>
+                    </li> <!-- end slide -->
 
-                <div class="action">
-                    <a class="button large" href="{{ url_for('register') }}">Sign Up Now</a>
+                    <li>
+                        <p>
+                            This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                            nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="images/avatars/avatar-2.jpg" alt="Author image">
+                            <div class="author-info">
+                                John Doe
+                                <span>CEO, ABC Corp.</span>
+                            </div>
+                        </div>
+                    </li> <!-- end slide -->
+                </ul> <!-- end slides -->
+            </div> <!-- end flexslider -->
+        </div> <!-- end row -->
+    </section> <!-- end testimonials section -->
+    <!-- contact
+    ================================================== -->
+    <section id="contact">
+
+        <div class="row section-head">
+
+            <div class="twelve columns">
+
+                <h1>Get In Touch With Us<span>.</span></h1>
+
+                <hr />
+            </div>
+        </div> <!-- end section-head -->
+
+        <div class="row">
+
+            <div id="contact-form" class="six columns tab-whole left">
+
+                <!-- form -->
+                <form name="contactForm" id="contactForm" method="post" action="">
+                    <fieldset>
+
+                        <div class="group">
+                            <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minLength="2" required />
+                        </div>
+                        <div>
+                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required />
+                        </div>
+                        <div>
+                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" />
+                        </div>
+                        <div>
+                            <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required></textarea>
+                        </div>
+                        <div>
+                            <button class="submitform">Submit</button>
+                            <div id="submit-loader">
+                                <div class="text-loader">Sending...</div>
+                                <div class="s-loader">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form> <!-- Form End -->
+                <!-- contact-warning -->
+                <div id="message-warning"></div>
+                <!-- contact-success -->
+                <div id="message-success">
+                    <i class="icon-ok"></i>Your message was sent, thank you!<br />
                 </div>
             </div>
-        </div> <!-- /cta-content -->
-    </section> <!-- /cta -->
-    <!-- footer
+
+            <div class="six columns tab-whole right">
+
+                <p class="lead">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+                    <h3 class="address">Come Visit</h3>
+
+                <p>
+                    Fayetteville Technical Community College<br />
+                    2201 Hull Rd<br />
+                    Fayetteville, NC<br />
+                    28303
+                </p>
+
+                <h3>Contact Numbers:</h3>
+                <p>
+                    Phone: (910) 678 8400<br>
+                </p>
+            </div>
+        </div> <!-- end row -->
+    </section>  <!-- end contact -->
+    <!-- Footer
     ================================================== -->
     <footer>
 
-        <div class="social-wrap">
-            <div class="row">
+        <div class="row">
 
-                <ul class="footer-social-list">
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-facebook"></i><span>Facebook</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i><span>Twitter</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/BSchweikart/Project-GLAPS/tree/master">
-                            <i class="fa fa-github"></i><span>GitHub</span>
-                        </a>
-                    </li>
+            <div class="twelve columns content group">
+
+                <ul class="social-links">
+                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+                    <li><a href="https://github.com/BSchweikart/Project-GLAPS/tree/master"><i class="fa fa-github"></i></a></li>
                 </ul>
-            </div> <!-- /row -->
-        </div> <!-- /social-wrap -->
 
-        <div class="footer-bottom">
+                <hr />
 
-            <div class="footer-logo">
-                <img src="images/footer-logo.png" alt="">
+                <div class="info">
+
+                    <div class="footer-logo"></div>
+
+                    <p>
+                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                        nibh id elit.
+                    </p>
+                </div>
             </div>
 
-            <div class="copyright">
-                <span>© Copyright Khronos 2016.</span>
-                <span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>
-            </div>
-        </div> <!-- /footer-bottom -->
+            <ul class="copyright">
+                <li>&copy; {{ year }} - Project GLAPS</li>
+                <li>Design by <a href="http://www.styleshout.com/">Styleshout.</a>.</li>
+            </ul>
 
-        <div class="back-to-top">
-            <a href="#top" class="smoothscroll"><span>Back to Top</span></a>
-        </div>
-    </footer>
+            <div id="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#hero">Back to Top<i class="fa fa-angle-up"></i></a>
+            </div>
+        </div> <!-- end row -->
+    </footer> <!-- end footer -->
 
     <div id="preloader">
         <div id="loader"></div>
@@ -390,40 +866,14 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="../static/scripts/jquery-2.1.3.min.js"></script>
-    <script src="../static/scripts/plugins.js"></script>
-    <script src="../static/scripts/main.js"></script>
-
-    <script>
-        //Need to call this into ID counter
-        // Set the date we're counting down to
-        var countDownDate = new Date("May 11, 2019 00:00:00").getTime();
-
-        // Update the count down every 1 second
-        var countdownfunction = setInterval(function () {
-
-            // Get todays date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now an the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the result in an element with id="demo"
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-
-            // If the count down is over, write some text
-            if (distance < 0) {
-                clearInterval(countdownfunction);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
-            }
-        }, 1000);
-    </script>
+    <script src="../static/scripts/kreo/js/jquery-1.11.3.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.flexslider-min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.waypoints.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.validate.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.fittext.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.placeholder.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/scripts/kreo/js/main.js"></script>
 </body>
 </html>
