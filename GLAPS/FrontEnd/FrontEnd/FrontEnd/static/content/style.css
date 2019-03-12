@@ -1,8 +1,7 @@
-/*  
+/*
 Theme Name: Layla
 Version:    1.0
 Author:     ThemeWagon
-
 
 TABLE OF CONTENTS
 
@@ -16,12 +15,10 @@ TABLE OF CONTENTS
     08 - Footer Section
     09 - Responsive Fixes
 
-
 */
 
-
-/* ///////////////////////////////////////////////////////////////////// 
-//  01 - Video 
+/* /////////////////////////////////////////////////////////////////////
+//  01 - Video
 /////////////////////////////////////////////////////////////////////*/
 
 #video-bg {
@@ -58,11 +55,9 @@ TABLE OF CONTENTS
     background: url(../assets/overlay.png);
 }
 
-
-/* ///////////////////////////////////////////////////////////////////// 
-//  02 - Global 
+/* /////////////////////////////////////////////////////////////////////
+//  02 - Global
 /////////////////////////////////////////////////////////////////////*/
-
 
 body {
     overflow-x: hidden;
@@ -127,19 +122,18 @@ p {
 
 /*Preloader*/
 
-.js div#preloader { 
-    position: fixed; 
-    left: 0; 
-    top: 0; 
-    z-index: 99999; 
-    width: 100%; 
-    height: 100%; 
-    overflow: visible; 
-    background: #fff url('../assets/block.gif') no-repeat center center; 
+.js div#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #fff url('../assets/block.gif') no-repeat center center;
 }
 
-
-/* ///////////////////////////////////////////////////////////////////// 
+/* /////////////////////////////////////////////////////////////////////
 //  03 - Navbar
 /////////////////////////////////////////////////////////////////////*/
 
@@ -190,7 +184,7 @@ p {
     top: 98%;
 }
 
-/* ///////////////////////////////////////////////////////////////////// 
+/* /////////////////////////////////////////////////////////////////////
 //  03 - Main Content Section
 /////////////////////////////////////////////////////////////////////*/
 
@@ -231,13 +225,12 @@ p {
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     transform: translateY(-50%);
-
 }
 
 .clock-item .inner {
     height: 0px;
     padding-bottom: 100%;
-    position: relative; 
+    position: relative;
     width: 100%;
 }
 
@@ -249,9 +242,9 @@ p {
 }
 
 .text {
-    color: #fff;    
+    color: #fff;
     font-size: 36px;
-    font-weight: 300;  
+    font-weight: 300;
     margin-top: -50px;
     position: absolute;
     top: 50%;
@@ -288,7 +281,7 @@ p {
 }
 #subscribe-form {
     max-width: 500px;
-    margin-bottom: 50px !important; 
+    margin-bottom: 50px !important;
 }
 .subscribe_text {
     font-size: 1.8em;
@@ -304,7 +297,7 @@ p {
     outline: none;
     transition: 0.4s ease border;
 }
-.mc-email:active, 
+.mc-email:active,
 .mc-email:focus{
     box-shadow: none;
     border-color: #9c27b0;
@@ -339,24 +332,23 @@ p {
     color: #9c27b0;
 }
 
-
-/* ///////////////////////////////////////////////////////////////////// 
+/* /////////////////////////////////////////////////////////////////////
 //  04 - Preloader
 /////////////////////////////////////////////////////////////////////*/
 
-#preloader { 
-    position: fixed; 
-    left: 0; 
-    top: 0; 
-    z-index: 99999999999; 
-    width: 100%; 
-    height: 100%; 
-    overflow: visible; 
-    background: #fff url('../img/preloader.gif') 
-    no-repeat center center; 
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999999999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #fff url('../img/preloader.gif')
+    no-repeat center center;
 }
 
-/* ///////////////////////////////////////////////////////////////////// 
+/* /////////////////////////////////////////////////////////////////////
 //  06 - About
 /////////////////////////////////////////////////////////////////////*/
 
@@ -371,7 +363,7 @@ p {
     margin: 0 auto;
 }
 
-/* ///////////////////////////////////////////////////////////////////// 
+/* /////////////////////////////////////////////////////////////////////
 //  7 - Contact us Section
 /////////////////////////////////////////////////////////////////////*/
 #contact {
@@ -483,8 +475,7 @@ p {
     background: transparent;
 }
 
-
-/* ///////////////////////////////////////////////////////////////////// 
+/* /////////////////////////////////////////////////////////////////////
 //  8 - Footer Section
 /////////////////////////////////////////////////////////////////////*/
 
@@ -500,8 +491,7 @@ p {
     padding: 0;
 }
 
-
-/* ///////////////////////////////////////////////////////////////////// 
+/* /////////////////////////////////////////////////////////////////////
 //  9 - Responsive Fixes
 /////////////////////////////////////////////////////////////////////*/
 
@@ -519,7 +509,6 @@ p {
         top: 2%;
     }
 }
-
 
 /*1300px - 992px*/
 
@@ -569,11 +558,11 @@ p {
         max-width: 100%;
     }
     .clock-item {
-        margin-bottom: 30px;        
+        margin-bottom: 30px;
     }
     .text .val {
         font-size: 1.2em;
-    
+
         padding-bottom: 0px;
         margin-bottom: 0px;
      }
