@@ -9,7 +9,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Cooming Soon</title>
+    <title>Coming Soon</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -19,13 +19,13 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="static/content/base.css">
-    <link rel="stylesheet" href="static/content/main.css">
-    <link rel="stylesheet" href="static/content/vendor.css">
+    <link rel="stylesheet" href="../static/content/khronos/css/base.css">
+    <link rel="stylesheet" href="../static/content/khronos/css/main.css">
+    <link rel="stylesheet" href="../static/content/khronos/css/vendor.css">
 
     <!-- script
     ================================================== -->
-    <script src="../static/scripts/modernizr.js"></script>
+    <script src="../static/scripts/khronos/js/modernizr.js"></script>
 
     <!-- favicons
      ================================================== -->
@@ -40,14 +40,14 @@
 
         <div class="row">
             <div class="logo">
-                <a href="layout.html">Khronos</a>
+                <a href="{{ url_for('home') }}">GLAPS Home</a>
             </div>
 
             <div class="social-links">
                 <ul>
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://github.com/BSchweikart/Project-GLAPS/tree/master"><i class="fa fa-github"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -181,10 +181,11 @@
                                         <span class="icon"><i class="icon-objects"></i></span>
 
                                         <div class="item-content">
-                                            <h3 class="h05">Clean Code</h3>
+                                            <h3 class="h05">GLAPS Engineer</h3>
 
                                             <p>
-                                                Need Info change header
+                                                Gaberiela Canjura<br>
+                                                Mallory Milstead<br>
                                             </p>
                                         </div>
                                     </div> <!-- /bgrid -->
@@ -194,15 +195,11 @@
                                         <span class="icon"><i class="icon-sliders"></i></span>
 
                                         <div class="item-content">
-                                            <h3 class="h05">Team Members</h3>
+                                            <h3 class="h05">Web Design</h3>
 
                                             <p>
-                                                Front End<br>
                                                 Brian Schweikart<br>
                                                 Jesse Watts<br><br>
-                                                BackEnd<br>
-                                                Gaberiela Canjura<br>
-                                                Mallory Milstead<br>
                                             </p>
                                         </div>
                                     </div> <!-- /bgrid -->
@@ -370,7 +367,7 @@
         <div class="footer-bottom">
 
             <div class="footer-logo">
-                <img src="images/footer-logo.png" alt="">
+                <img src="/static/images/footer-logo.png" alt="">
             </div>
 
             <div class="copyright">
@@ -390,9 +387,9 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="../static/scripts/jquery-2.1.3.min.js"></script>
-    <script src="../static/scripts/plugins.js"></script>
-    <script src="../static/scripts/main.js"></script>
+    <script src="../static/scripts/khronos/js/jquery-2.1.3.min.js"></script>
+    <script src="../static/scripts/khronos/js/plugins.js"></script>
+    <script src="../static/scripts/khronos/js/main.js"></script>
 
     <script>
         //Need to call this into ID counter
