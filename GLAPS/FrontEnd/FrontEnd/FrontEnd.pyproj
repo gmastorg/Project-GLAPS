@@ -96,6 +96,7 @@
     <Content Include="FrontEnd\static\images\quotes\jobs.jpg" />
     <Content Include="FrontEnd\static\images\quotes\watson.jpg" />
     <Content Include="FrontEnd\static\images\team\brain.jpg" />
+    <Content Include="FrontEnd\static\images\team\jesse.jpg" />
     <Content Include="FrontEnd\static\images\team\Mallory.jpg" />
     <Content Include="FrontEnd\static\scripts\khronos\js\jquery-2.1.3.min.js" />
     <Content Include="FrontEnd\static\scripts\khronos\js\main.js" />
