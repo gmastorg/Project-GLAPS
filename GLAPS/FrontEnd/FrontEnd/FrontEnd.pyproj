@@ -91,6 +91,8 @@
     <Content Include="FrontEnd\static\content\khronos\css\micons\fonts\icomoon.woff" />
     <Content Include="FrontEnd\static\content\khronos\css\micons\micons.css" />
     <Content Include="FrontEnd\static\content\khronos\css\vendor.css" />
+    <Content Include="FrontEnd\static\images\g.png" />
+    <Content Include="FrontEnd\static\images\ggg.png" />
     <Content Include="FrontEnd\static\images\quotes\jobs.jpg" />
     <Content Include="FrontEnd\static\images\quotes\watson.jpg" />
     <Content Include="FrontEnd\static\images\team\brain.jpg" />
@@ -117,7 +119,7 @@
     <Content Include="FrontEnd\static\content\style.css" />
     <Content Include="FrontEnd\static\content\vendor.css" />
     <Content Include="FrontEnd\static\images\footer-logo.png" />
-    <Content Include="FrontEnd\static\images\g.png" />
+    <Content Include="FrontEnd\static\images\gg.png" />
     <Content Include="FrontEnd\static\images\home-bg.jpg" />
     <Content Include="FrontEnd\static\images\info-bg.jpg" />
     <Content Include="FrontEnd\static\images\logo.png" />
