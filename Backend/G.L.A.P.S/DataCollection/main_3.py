@@ -5,6 +5,7 @@ Created on Mon Feb 11 13:44:15 2019
 @author: canjurag4010
 """
 
+from apis_3 import getCensusData, codesAndNames
 import json
 from urllib.request import urlopen
 from sqlalchemy import create_engine
@@ -17,7 +18,6 @@ from sqlalchemy import Index
 from sqlalchemy.orm import relationship, backref, mapper
 import logging
 from sqlalchemy.orm import sessionmaker
-from apis_3 import getCensusData, codesAndNames
 
 
 path = os.path.abspath("MinorLeague.db")
@@ -167,6 +167,8 @@ gets a list of names and codes for all counties and states
 '''
 allStatesAndCounties = codesAndNames()
 
+print(allStatesAndCounties)
+
 '''
 sends the info in list above to db
 '''
@@ -177,10 +179,10 @@ for item in allStatesAndCounties:
 session.commit()
 session.flush()
 
-'''
-uses data above to create a table with location ID and eventually stadiums
-'''
 
+'''
+#uses data above to create a table with location ID and eventually stadiums
+'''
 x = 0  
 for item in allStatesAndCounties: 
     x += 1
@@ -195,7 +197,7 @@ AllSubjectCounties = []
 AllDataProfilesCounties = []
 
 '''
-creates list of lists with data for all years in all counties and states
+#creates list of lists with data for all years in all counties and states
 '''
 for year in years:
 
@@ -204,7 +206,7 @@ for year in years:
     AllSubjectCounties.append(getCensusData(year, censusList[0]))
 
 '''
-puts data into detailed table in db
+#puts data into detailed table in db
 '''
 for data in AllDetailedCounties:
     for item in data:
@@ -225,7 +227,7 @@ session.commit()
 session.flush()
 
 '''
-puts data into data profiles table in db
+#puts data into data profiles table in db
 '''   
 for data in AllDataProfilesCounties:
     for item in data:
@@ -246,7 +248,7 @@ session.commit()
 session.flush()
 
 '''
-puts data into subject table in db
+#puts data into subject table in db
 '''
 
 for data in AllSubjectCounties:
@@ -265,4 +267,3 @@ for data in AllSubjectCounties:
    
 session.commit()
 session.flush()
-

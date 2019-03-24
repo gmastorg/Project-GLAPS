@@ -1,6 +1,5 @@
 import requests
 import json
-import random 
 
 '''
 creates a list from the api of the County and State names as well as the codes
@@ -9,7 +8,7 @@ def codesAndNames():
     allStatesandCounties = []
     state_county = ()
         
-    url = requests.get("https://api.census.gov/data/2011/acs/acs1?get=NAME,B01001_001E&for=county:*&in=state:*&key=c64b663f57b72887707719c1318350c2fb6f9146")
+    url = requests.get("https://api.census.gov/data/2017/acs/acs1?get=NAME,B01001_001E&for=county:*&in=state:*&key=c64b663f57b72887707719c1318350c2fb6f9146")
     responseJson = list(json.loads(url.text))
     
     for item in responseJson:
