@@ -3,6 +3,7 @@ Routes and views for the flask application.
 """
 import functools
 
+import requests
 from flask import (
 	Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
@@ -14,6 +15,7 @@ from FrontEnd.db import get_db
 from datetime import datetime
 from flask import render_template
 from FrontEnd import app
+import json
 
 @app.route('/')
 @app.route('/comingsoon')
@@ -152,7 +154,7 @@ def glaps():
             errors += "<p>{!r} is not a number.</p>\n".format(request.form["HomeVal"])
         if County is not None and HomeVal is not None:
             result = getAPI()
-        return '''
+            return '''
                 <html>
                     <body>
                         <p>The medval is {result[0]}</p>
@@ -160,8 +162,8 @@ def glaps():
                     </body>
                 </html>
             '''.format(result=result)
-
-    return render_template('glaps.html',
+    else: 
+        return render_template('glaps.html',
         title='Value',
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
