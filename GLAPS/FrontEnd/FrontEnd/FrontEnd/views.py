@@ -1,28 +1,27 @@
 """
 Routes and views for the flask application.
 """
+#Greetings {{ g.user['username'] }}
 import functools
 
-from flask import (
-	Blueprint, flash, g, redirect, render_template, request, session, url_for
-)
+from flask import (Blueprint, flash, g, redirect, render_template, request, session, url_for)
 from werkzeug.security import check_password_hash, generate_password_hash
 from FrontEnd.db import get_db
-
-bp = Blueprint('auth', __name__, url_prefix='/auth')
 from datetime import datetime
 from flask import render_template
 from FrontEnd import app
 
+bp = Blueprint('auth', __name__, url_prefix='/auth')
+
 @app.route('/')
 @app.route('/comingsoon')
-def commingsoon():
-    """
-        Renders the count down page. This page is a place holder for right now.
-    """
-    return render_template('comingsoon.html',
-        title='Coming Soon',
-        year=datetime.now().year)
+#def commingsoon():
+#    """
+#        Renders the count down page. This page is a place holder for right now.
+#    """
+#    return render_template('comingsoon.html',
+#        title='Coming Soon',
+#        year=datetime.now().year)
 
 @app.route('/home')
 def home():
@@ -54,11 +53,6 @@ def load_logged_in_user():
 		g.user = get_db().execute(
 			'SELECT * FROM user WHERE id = ?', (user_id,)
 		).fetchone()
-@app.route('/logout')
-def logout():
-	"""Clear the current session, including the stored user id."""
-	session.clear()
-	return redirect(url_for('comingsoon'))
 
 @app.route('/login', methods=('GET', 'POST'))
 def login():
@@ -84,6 +78,13 @@ def login():
 		flash(error)
 
 	return render_template('auth/login.html', title='Login', year=datetime.now().year)
+
+@app.route('/logout/')
+@login_required
+def logout():
+	"""Clear the current session, including the stored user id."""
+	session.clear()
+	return redirect(url_for('comingsoon'))
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
@@ -127,13 +128,14 @@ def glaps():
         message= 'Enter your information to display the value')
 
 @app.route('/test')
+@login_required
 def test():
     return render_template('test.html',
         title='test',
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
 
-@app.route('/about')
+@app.route('/about') # still need for some reason
 def about():
     """Renders the about page."""
     return render_template('about.html',
@@ -141,7 +143,7 @@ def about():
         year=datetime.now().year,
         message='Learn about Geographic Location Attribute Predictor System (GLAPS).')
 
-@app.route('/contact')
+@app.route('/contact') #still need for some reason
 def contact():
     """Renders the contact page."""
     return render_template('contact.html',
