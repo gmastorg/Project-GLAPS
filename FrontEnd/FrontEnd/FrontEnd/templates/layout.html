@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project GLAPS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../static/content/kreo/css/base.css">
+    <link rel="stylesheet" href="../static/content/kreo/css/vendor.min.css">
+    <link rel="stylesheet" href="../static/content/kreo/css/main.css">
+    <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
+    <!-- script
+    ================================================== -->
+    <script src="../static/scripts/kreo/js/modernizr.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">-->
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <!-- favicons
+     ================================================== -->
+    <link rel="icon" type="image/png" href="../static/images/g.png">
+</head>
+<body>
+    <!-- header
+    ================================================== -->
+    <header id="main-header">
+
+        <div class="row">
+
+            <div class="logo">
+                <a href="{{ url_for('home') }}">GLAPS</a>
+            </div>
+
+            <nav id="nav-wrap">
+
+                <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+                    <span class="menu-icon">Menu</span>
+                </a>
+                <a class="mobile-btn" href="#" title="Hide navigation">
+                    <span class="menu-icon">Menu</span>
+                </a>
+
+                <ul id="nav" class="nav">
+                    <li><a href="{{ url_for('home') }}">Home.</a></li>
+                    {% if g.user %}
+                    <li><span>{{ g.user['username'] }}</span>
+                    <li>
+                        <a href="{{ url_for('auth.logout') }}">Log Out</a>
+                        {% else %}
+                    <li><a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% endif %}
+                </ul> <!-- end #nav -->
+            </nav> <!-- end #nav-wrap -->
+
+            <ul class="header-social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://github.com/BSchweikart/Project-GLAPS/tree/master"><i class="fa fa-github"></i></a></li>
+            </ul>
+        </div>
+    </header> <!-- end header -->
+    <!--<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ url_for('home') }}">GLAPS</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if g.user %}
+                <li><span>{{ g.user['username'] }}</span>
+                <li>
+                    <a href="{{ url_for('auth.logout') }}">Log Out</a>
+                    {% else %}
+                <li><a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>-->
+
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <footer>
+            <p>&copy; {{ year }} - Project GLAPS</p>
+        </footer>
+    </div>
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../static/scripts/kreo/js/jquery-1.11.3.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.flexslider-min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.waypoints.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.validate.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.fittext.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.placeholder.min.js"></script>
+    <script src="../static/scripts/kreo/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/scripts/kreo/js/main.js"></script>
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
