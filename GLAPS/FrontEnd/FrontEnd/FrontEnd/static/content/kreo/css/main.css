@@ -649,7 +649,7 @@ header {
             color: transparent;
             width: 114px;
             height: 66px;
-            background: url("../images/logoK@2x.png") no-repeat center;
+            background: url("../../../images/ggg.png") no-repeat center; /*need to adjust image size to fit into space*/
             background-size: 61px 14px;
         }
 
