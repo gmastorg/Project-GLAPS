@@ -7,10 +7,9 @@ from flask import (
 	Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 from werkzeug.security import check_password_hash, generate_password_hash
-
 from FrontEnd.db import get_db
 
-#bp = Blueprint('auth', __name__, url_prefix='/auth')
+bp = Blueprint('auth', __name__, url_prefix='/auth')
 from datetime import datetime
 from flask import render_template
 from FrontEnd import app
@@ -43,18 +42,18 @@ def login_required(view):
 
 	return wrapped_view
 
-#@app.before_app_request #'Flask' object has no attribute 'before_app_request
-#def load_logged_in_user():
-#	"""If a user id is stored in the session, load the user object from
-#	the database into ``g.user``."""
-#	user_id = session.get('user_id')
+@bp.before_app_request #'Flask' object has no attribute 'before_app_request
+def load_logged_in_user():
+	"""If a user id is stored in the session, load the user object from
+	the database into ``g.user``."""
+	user_id = session.get('user_id')
 
-#	if user_id is None:
-#		g.user = None
-#	else:
-#		g.user = get_db().execute(
-#			'SELECT * FROM user WHERE id = ?', (user_id,)
-#		).fetchone()
+	if user_id is None:
+		g.user = None
+	else:
+		g.user = get_db().execute(
+			'SELECT * FROM user WHERE id = ?', (user_id,)
+		).fetchone()
 @app.route('/logout')
 def logout():
 	"""Clear the current session, including the stored user id."""
@@ -120,6 +119,20 @@ def register():
 
     return render_template('auth/register.html', title='Register', year=datetime.now().year)
 
+@app.route('/glaps') #this section is used for when the data bases are linked.
+def glaps():
+    return render_template('glaps.html',
+        title='Value',
+        bytearray=datetime.now().year,
+        message= 'Enter your information to display the value')
+
+@app.route('/test')
+def test():
+    return render_template('test.html',
+        title='test',
+        bytearray=datetime.now().year,
+        message= 'Enter your information to display the value')
+
 @app.route('/about')
 def about():
     """Renders the about page."""
@@ -135,17 +148,3 @@ def contact():
         title='Contact',
         year=datetime.now().year,
         message='Please Contact us with any questions or concerns.')
-
-@app.route('/glaps') #this section is used for when the data bases are linked.
-def glaps():
-    return render_template('glaps.html',
-        title='Value',
-        bytearray=datetime.now().year,
-        message= 'Enter your information to display the value')
-
-@app.route('/test')
-def test():
-    return render_template('test.html',
-        title='test',
-        bytearray=datetime.now().year,
-        message= 'Enter your information to display the value')

@@ -150,6 +150,7 @@
     <Content Include="FrontEnd\static\scripts\script.js" />
     <Content Include="FrontEnd\static\scripts\sticky.js" />
     <Content Include="FrontEnd\static\scripts\wow.min.js" />
+    <Content Include="FrontEnd\templates\auth\logout.html" />
     <Content Include="FrontEnd\templates\backup.html" />
     <Content Include="FrontEnd\templates\auth\login.html" />
     <Content Include="FrontEnd\templates\auth\register.html" />
