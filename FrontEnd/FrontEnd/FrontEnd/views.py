@@ -179,7 +179,7 @@ def test():
 def getAPI():
 
     myreqs = {"HomeVal":request.form['HomeVal'], "County":request.form['County']}
-    url = requests.get("http://127.0.0.1:5000/GLAPS", params=myreqs)
+    url = requests.get("http://gmastorg.pythonanywhere.com/GLAPS", params=myreqs)
     responseJson = json.loads(url.text)
 
     return responseJson
