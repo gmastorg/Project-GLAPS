@@ -157,8 +157,8 @@ def glaps():
             return '''
                 <html>
                     <body>
-                        <p>The medval is {result[0]}</p>
-                        <p><a href="/">Click here to calculate again</a>
+                        <p>The medval is {result}</p>
+                        <p><a href="/glaps">Click here to calculate again</a>
                     </body>
                 </html>
             '''.format(result=result)
