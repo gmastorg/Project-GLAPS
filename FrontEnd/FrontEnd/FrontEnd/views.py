@@ -29,6 +29,7 @@ def commingsoon():
 
 @app.route('/home')
 def home():
+    load_logged_in_user()
     """Renders the home page."""
     return render_template('home.html',
         title='Home Page',
@@ -45,18 +46,16 @@ def login_required(view):
 
 	return wrapped_view
 
-#@app.before_app_request #'Flask' object has no attribute 'before_app_request
-#def load_logged_in_user():
-#	"""If a user id is stored in the session, load the user object from
-#	the database into ``g.user``."""
-#	user_id = session.get('user_id')
+def load_logged_in_user():
+	"""If a user id is stored in the session, load the user object from
+	the database into ``g.user``."""
+	user_id = session.get('user_id')
 
-#	if user_id is None:
-#		g.user = None
-#	else:
-#		g.user = get_db().execute(
-#			'SELECT * FROM user WHERE id = ?', (user_id,)
-#		).fetchone()
+	if user_id is None:
+		g.user = None
+	else:
+		g.user = get_db().execute('SELECT * FROM user WHERE id = ?', (user_id,)).fetchone()
+
 @app.route('/logout')
 def logout():
 	"""Clear the current session, including the stored user id."""
@@ -140,7 +139,7 @@ def contact():
 
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
-    errors=""
+    errors = ""
     if request.method == "POST":
         County = None
         HomeVal = None
@@ -162,7 +161,7 @@ def glaps():
                     </body>
                 </html>
             '''.format(result=result)
-    else: 
+    else:
         return render_template('glaps.html',
         title='Value',
         bytearray=datetime.now().year,
