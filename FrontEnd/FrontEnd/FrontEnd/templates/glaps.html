@@ -2,14 +2,91 @@
 
 {% block content %}
 <br />
+<br />
+<head>
+    <title>Geocoding Service</title>
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no">-->
+    <style>
+         /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+         #map {
+             height: 425px;
+         }
+         /* Optional: Makes the sample page fill the window. */
+         html, body {
+             height: 100%;
+             margin: 0;
+             padding: 0;
+         }
 
+         #floating-panel {
+             position: absolute;
+             top: 100px;
+             left: 25%;
+             z-index: 5;
+             background-color: #fff;
+             padding: 5px;
+             border: 1px solid #999;
+             text-align: center;
+             font-family: 'Roboto','sans-serif';
+             line-height: 30px;
+             padding-left: 10px;
+         }
+    </style>
+</head>
+<body>
+    <div id="floating-panel">
+        <input id="address" type="text" value="Fayetteville, NC">
+        <input id="submit" type="button" value="Geocode">
+    </div>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+           var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 35.052666, lng: -78.878357 },
+                zoom: 8
+            });
+            var geocoder = new google.maps.Geocoder();
+
+            document.getElementById('submit').addEventListener('click', function () {
+                geocodeAddress(geocoder, map);
+            });
+        }
+
+        function geocodeAddress(geocoder, resultsMap) {
+            var address = document.getElementById('address').value;
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status === 'OK') {
+                    resultsMap.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: resultsMap,
+                        position: results[0].geometry.location
+                    });
+                    var loc = results[0].address_components[1].short_name
+                    var loc2 = results[0].address_components[2].long_name
+                    var county = String(loc) + ", "+ String(loc2)
+
+                    alert(loc);
+                    alert(loc2);
+                    alert(county);
+
+                    document.getElementById('County').value = county;
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGT0avpEh98zEV2TcnRn1x-4V8b3s71Kc&library=places&callback=initMap"
+            async defer></script>
+</body>
 <section id="GLAPS">
 
     <div class="row section-head">
-
         <div class="twelve columns">
 
-            <h1>Home Value Predictor<span>.</span></h1>
+            <h1>{{title}}<span>.</span></h1>
+            <h2>{{message}}</h2>
 
             <hr />
         </div>
@@ -22,29 +99,9 @@
             <!-- form -->
             <form name="GLAPS" id="GLAPS" method="post" action="">
                 <fieldset>
-
-                    <div class="container">
-                        {% for key in StateCounties %}
-                        <div class="accordion" id="accordion_{{loop.index}}">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse_{{ loop.index }}" aria-expanded="false" aria-controls="collapse_{{ loop.index }}">
-                                            {{key}}
-                                        </button>
-                                    </h5>
-                                </div>
-
-                                <div id="collapse_{{ loop.index }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        HERE ARE THE COUNTIES
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
+                    <div>
+                        <input name="County" type="text" id="County" placeholder="County" value="" />
                     </div>
-
                     <div>
                         <input name="HomeVal" type="text" id="HomeVal" placeholder="Current Home Value" value="" />
                     </div>
@@ -61,7 +118,6 @@
                     </div>
                 </fieldset>
             </form> <!-- Form End -->
-
             <!-- contact-warning -->
             <div id="message-warning"></div>
             <!-- contact-success -->

@@ -138,10 +138,8 @@ def contact():
         year=datetime.now().year,
         message='Please Contact us with any questions or concerns.')
 
-StatesCounties = {}
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
-    States = getStatesandCounties()
     errors=""
     if request.method == "POST":
         County = None
@@ -156,17 +154,16 @@ def glaps():
             errors += "<p>{!r} is not a number.</p>\n".format(request.form["HomeVal"])
         if County is not None and HomeVal is not None:
             result = getAPI()
+
             return render_template('glaps.html',
-        title='Home Value Predictor',
-        bytearray=datetime.now().year,
-        message= 'Your Home Values are:'+result[0],
-        StatesCounties = sorted(StatesCounties))
+            title='Home Value Predictor',
+            bytearray=datetime.now().year,
+            message= result[0])
     else: 
         return render_template('glaps.html',
         title='Home Value Predictor',
         bytearray=datetime.now().year,
-        message= 'Enter your information to display the value',
-        StatesCounties = sorted(StatesCounties))
+        message= 'Enter your information to display the value')
 
 @app.route('/test')
 def test():
@@ -189,24 +186,3 @@ def getAPI():
     responseJson = json.loads(url.text)
 
     return responseJson
-
-import os
-import csv
-#creates dict of states and counties
-StatesCounties = {}
-def getStatesandCounties():
-    i=0
-    path = os.path.abspath("States_Counties.csv")
-    with open(path) as file:
-        inputFile = csv.reader(file)
-        next(inputFile)
-        for row in inputFile:
-             stateandCounty=row[0]
-             x =  stateandCounty.split(", ")
-             if x[1] in StatesCounties:
-                # append the new number to the existing array at this slot
-                StatesCounties[x[1]].append(x[0])
-             else:
-                # create a new array in this slot
-                StatesCounties[x[1]] = [x[0]]   
-    return StatesCounties
