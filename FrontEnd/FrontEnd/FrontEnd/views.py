@@ -183,3 +183,9 @@ def getAPI():
     responseJson = json.loads(url.text)
 
     return responseJson
+
+#View for the facets.html page
+@app.route('/visualizations')
+def visualizations():
+    """Renders the visualizations page."""
+    return render_template('visualizations.html')

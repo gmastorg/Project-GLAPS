@@ -59,6 +59,8 @@
                     <li><a class="smoothscroll" href="#services">Services.</a></li>
                     <li><a class="smoothscroll" href="#about">About.</a></li>
                     <li><a class="smoothscroll" href="#contact">Contact.</a></li>
+                    <li><a href="{{ url_for('visualizations') }}">Visualizations.</a></li>
+
                     {% if g.user %}
                     <li><span>{{ g.user['username'] }}</span>
                     <li>
