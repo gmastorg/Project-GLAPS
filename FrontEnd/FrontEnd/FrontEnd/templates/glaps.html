@@ -23,9 +23,28 @@
             <form name="GLAPS" id="GLAPS" method="post" action="">
                 <fieldset>
 
-                    <div class="group">
-                        <input name="County" type="text" id="countyState" placeholder="County, State" value="" minLength="2" required />
+                    <div class="container">
+                        {% for key in StateCounties %}
+                        <div class="accordion" id="accordion_{{loop.index}}">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse_{{ loop.index }}" aria-expanded="false" aria-controls="collapse_{{ loop.index }}">
+                                            {{key}}
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="collapse_{{ loop.index }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        HERE ARE THE COUNTIES
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
+
                     <div>
                         <input name="HomeVal" type="text" id="HomeVal" placeholder="Current Home Value" value="" />
                     </div>

@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FrontEnd\schema.sql" />
+    <Content Include="FrontEnd\States_Counties.csv" />
     <Content Include="FrontEnd\static\content\animate.css" />
     <Content Include="FrontEnd\static\content\base.css" />
     <Content Include="FrontEnd\static\content\fonts.css" />

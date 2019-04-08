@@ -138,8 +138,10 @@ def contact():
         year=datetime.now().year,
         message='Please Contact us with any questions or concerns.')
 
+StatesCounties = {}
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
+    States = getStatesandCounties()
     errors=""
     if request.method == "POST":
         County = None
@@ -154,19 +156,17 @@ def glaps():
             errors += "<p>{!r} is not a number.</p>\n".format(request.form["HomeVal"])
         if County is not None and HomeVal is not None:
             result = getAPI()
-            return '''
-                <html>
-                    <body>
-                        <p>The medval is {result}</p>
-                        <p><a href="/glaps">Click here to calculate again</a>
-                    </body>
-                </html>
-            '''.format(result=result)
+            return render_template('glaps.html',
+        title='Home Value Predictor',
+        bytearray=datetime.now().year,
+        message= 'Your Home Values are:'+result[0],
+        StatesCounties = sorted(StatesCounties))
     else: 
         return render_template('glaps.html',
-        title='Value',
+        title='Home Value Predictor',
         bytearray=datetime.now().year,
-        message= 'Enter your information to display the value')
+        message= 'Enter your information to display the value',
+        StatesCounties = sorted(StatesCounties))
 
 @app.route('/test')
 def test():
@@ -174,6 +174,12 @@ def test():
         title='test',
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
+
+#View for the facets.html page
+@app.route('/visualizations')
+def visualizations():
+    """Renders the visualizations page."""
+    return render_template('visualizations.html')
 
 #method that gets data from GLAPS API
 def getAPI():
@@ -184,8 +190,23 @@ def getAPI():
 
     return responseJson
 
-#View for the facets.html page
-@app.route('/visualizations')
-def visualizations():
-    """Renders the visualizations page."""
-    return render_template('visualizations.html')
+import os
+import csv
+#creates dict of states and counties
+StatesCounties = {}
+def getStatesandCounties():
+    i=0
+    path = os.path.abspath("States_Counties.csv")
+    with open(path) as file:
+        inputFile = csv.reader(file)
+        next(inputFile)
+        for row in inputFile:
+             stateandCounty=row[0]
+             x =  stateandCounty.split(", ")
+             if x[1] in StatesCounties:
+                # append the new number to the existing array at this slot
+                StatesCounties[x[1]].append(x[0])
+             else:
+                # create a new array in this slot
+                StatesCounties[x[1]] = [x[0]]   
+    return StatesCounties
