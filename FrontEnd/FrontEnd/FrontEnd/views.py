@@ -13,9 +13,10 @@ from FrontEnd.db import get_db
 
 #bp = Blueprint('auth', __name__, url_prefix='/auth')
 from datetime import datetime
-from flask import render_template
+from flask import render_template, Markup
 from FrontEnd import app
 import json
+
 
 @app.route('/')
 @app.route('/comingsoon')
@@ -154,16 +155,27 @@ def glaps():
             errors += "<p>{!r} is not a number.</p>\n".format(request.form["HomeVal"])
         if County is not None and HomeVal is not None:
             result = getAPI()
+            result = list(result[0].values())
 
+            actualNoStad = str("{:,}".format(result[0]))
+            actualWStad = str("{:,}".format(result[1]))
+            medianNoStad = str("{:,}".format(result[2]))
+            medianWStad = str("{:,}".format(result[3]))
+
+            output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' +actualNoStad+ '</font>' +  \
+            "<br><br>Current Home Value with a Stadium:   " +  '<font color="limegreen">$' +actualWStad+ '</font>' + \
+           "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>' +" without a Stadium:   " +  '<font color="limegreen">$' +medianNoStad+ '</font>' + \
+           "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>'+ " with a Stadium:   "  +'<font color="limegreen">$' +medianWStad+ '</font>' + \
+           "<br><br><br><small>The predicted values have a PERCENT margin of error and were calculated using data from the 2017 U.S. Census</small>")
             return render_template('glaps.html',
             title='Home Value Predictor',
             bytearray=datetime.now().year,
-            message= result[0])
+            message=output)
     else: 
         return render_template('glaps.html',
         title='Home Value Predictor',
         bytearray=datetime.now().year,
-        message= 'Enter your information to display the value')
+        message= 'Enter your location on the map and your current home value below:')
 
 @app.route('/test')
 def test():

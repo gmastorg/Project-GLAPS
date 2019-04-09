@@ -66,10 +66,6 @@
                     var loc2 = results[0].address_components[2].long_name
                     var county = String(loc) + ", "+ String(loc2)
 
-                    alert(loc);
-                    alert(loc2);
-                    alert(county);
-
                     document.getElementById('County').value = county;
                 } else {
                     alert('Geocode was not successful for the following reason: ' + status);
