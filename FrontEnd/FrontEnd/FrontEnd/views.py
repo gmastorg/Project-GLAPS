@@ -114,6 +114,7 @@ def register():
 
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
+    load_logged_in_user()
     errors = ""
     if request.method == "POST":
         County = None

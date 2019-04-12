@@ -51,7 +51,7 @@
 
                 <ul id="nav" class="nav">
                     <li><a href="{{ url_for('home') }}">Home.</a></li>
-                    {% if g.user %}
+                    {% if g.user %}                    
                     <li><span>{{ g.user['username'] }}</span>
                     <li>
                         <a href="{{ url_for('logout') }}">Log Out</a>
@@ -68,28 +68,7 @@
                 <li><a href="https://github.com/BSchweikart/Project-GLAPS/tree/master"><i class="fa fa-github"></i></a></li>
             </ul>
         </div>
-    </header> <!-- end header -->
-    <!--<nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="{{ url_for('home') }}">GLAPS</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                {% if g.user %}
-                <li><span>{{ g.user['username'] }}</span>
-                <li>
-                    <a href="{{ url_for('auth.logout') }}">Log Out</a>
-                    {% else %}
-                <li><a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                {% endif %}
-            </ul>
-        </div>
-    </nav>-->
+    </header>
 
     <div class="container body-content">
         {% block content %}{% endblock %}
