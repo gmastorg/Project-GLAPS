@@ -18,15 +18,6 @@ from FrontEnd import app
 import json
 
 @app.route('/')
-@app.route('/comingsoon')
-def commingsoon():
-    """
-        Renders the count down page. This page is a place holder for right now.
-    """
-    return render_template('comingsoon.html',
-        title='Coming Soon',
-        year=datetime.now().year)
-
 @app.route('/home')
 def home():
     load_logged_in_user()
@@ -54,7 +45,7 @@ def load_logged_in_user():
 	if user_id is None:
 		g.user = None
 	else:
-		g.user = get_db().execute('SELECT * FROM user WHERE id = ?', (user_id,)).fetchone()
+		g.user = get_db().execute('SELECT * FROM users WHERE id = ?', (user_id,)).fetchone()
 
 @app.route('/logout')
 def logout():
@@ -115,27 +106,11 @@ def register():
         if error is None:
             db.execute('INSERT INTO users (username, email, password) VALUES (?,?,?)',(username, email, generate_password_hash(password)))
             db.commit()
-            return redirect(url_for('login'))
+            return redirect(url_for('auth/login'))
 
             flash(error)
 
     return render_template('auth/register.html', title='Register', year=datetime.now().year)
-
-@app.route('/about')
-def about():
-    """Renders the about page."""
-    return render_template('about.html',
-        title='About',
-        year=datetime.now().year,
-        message='Learn about Geographic Location Attribute Predictor System (GLAPS).')
-
-@app.route('/contact')
-def contact():
-    """Renders the contact page."""
-    return render_template('contact.html',
-        title='Contact',
-        year=datetime.now().year,
-        message='Please Contact us with any questions or concerns.')
 
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
@@ -182,3 +157,28 @@ def getAPI():
     responseJson = json.loads(url.text)
 
     return responseJson
+
+@app.route('/comingsoon')
+def comingsoon():
+    """
+        Renders the count down page. This page is a place holder for right now.
+    """
+    return render_template('comingsoon.html',
+        title='Coming Soon',
+        year=datetime.now().year)
+
+#@app.route('/about')
+#def about():
+#    """Renders the about page."""
+#    return render_template('about.html',
+#        title='About',
+#        year=datetime.now().year,
+#        message='Learn about Geographic Location Attribute Predictor System (GLAPS).')
+
+#@app.route('/contact')
+#def contact():
+#    """Renders the contact page."""
+#    return render_template('contact.html',
+#        title='Contact',
+#        year=datetime.now().year,
+#        message='Please Contact us with any questions or concerns.')
