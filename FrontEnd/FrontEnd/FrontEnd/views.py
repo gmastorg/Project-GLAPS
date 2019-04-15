@@ -151,31 +151,33 @@ def glaps():
         
         County = request.form['County']
         
-        if (County == "" or County == None) and County not in States_Counties:
+        if County == "" or County == None:
             errors += Markup("<br>Please enter a County<br>")
         try:
             HomeVal = int(request.form["HomeVal"])
         except:
             errors += Markup("<br>Please enter a Home Value<br>")
         if County != "" and HomeVal is not None and County != None:
-                result = getAPI()
-                result = list(result[0].values())
+            for item in States_Counties:
+                if County == item: 
+                    result = getAPI()
+                    result = list(result[0].values())
 
-                actualNoStad = str("{:,}".format(result[0]))
-                actualWStad = str("{:,}".format(result[1]))
-                medianNoStad = str("{:,}".format(result[2]))
-                medianWStad = str("{:,}".format(result[3]))
+                    actualNoStad = str("{:,}".format(result[0]))
+                    actualWStad = str("{:,}".format(result[1]))
+                    medianNoStad = str("{:,}".format(result[2]))
+                    medianWStad = str("{:,}".format(result[3]))
 
-                output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' +actualNoStad+ '</font>' +  \
-                "<br><br>Current Home Value with a Stadium:   " +  '<font color="limegreen">$' +actualWStad+ '</font>' + \
-               "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>' +" without a Stadium:   " +  '<font color="limegreen">$' +medianNoStad+ '</font>' + \
-               "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>'+ " with a Stadium:   "  +'<font color="limegreen">$' +medianWStad+ '</font>' + \
-               "<br><br><br><small>The predicted values have a PERCENT margin of error and were calculated using data from the 2017 U.S. Census</small>")
-                return render_template('glaps.html',
-                title='Home Value Predictor',
-                bytearray=datetime.now().year,
-                message=output)
-
+                    output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' +actualNoStad+ '</font>' +  \
+                    "<br><br>Current Home Value with a Stadium:   " +  '<font color="limegreen">$' +actualWStad+ '</font>' + \
+                   "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>' +" without a Stadium:   " +  '<font color="limegreen">$' +medianNoStad+ '</font>' + \
+                   "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>'+ " with a Stadium:   "  +'<font color="limegreen">$' +medianWStad+ '</font>' + \
+                   "<br><br><br><small>The predicted values have a PERCENT margin of error and were calculated using data from the 2017 U.S. Census</small>")
+                    return render_template('glaps.html',
+                    title='Home Value Predictor',
+                    bytearray=datetime.now().year,
+                    message=output)
+            errors += Markup("<br>Please enter a County<br>")
     return render_template('glaps.html',
         title='Home Value Predictor',
         bytearray=datetime.now().year,
