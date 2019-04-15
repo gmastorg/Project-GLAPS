@@ -19,17 +19,9 @@ import json
 
 
 @app.route('/')
-@app.route('/comingsoon')
-def commingsoon():
-    """
-        Renders the count down page. This page is a place holder for right now.
-    """
-    return render_template('comingsoon.html',
-        title='Coming Soon',
-        year=datetime.now().year)
-
 @app.route('/home')
 def home():
+    load_logged_in_user()
     """Renders the home page."""
     return render_template('home.html',
         title='Home Page',
@@ -47,17 +39,17 @@ def login_required(view):
 	return wrapped_view
 
 #@app.before_app_request #'Flask' object has no attribute 'before_app_request
-#def load_logged_in_user():
-#	"""If a user id is stored in the session, load the user object from
-#	the database into ``g.user``."""
-#	user_id = session.get('user_id')
+def load_logged_in_user():
+	"""If a user id is stored in the session, load the user object from
+	the database into ``g.user``."""
+	user_id = session.get('user_id')
 
-#	if user_id is None:
-#		g.user = None
-#	else:
-#		g.user = get_db().execute(
-#			'SELECT * FROM user WHERE id = ?', (user_id,)
-#		).fetchone()
+	if user_id is None:
+		g.user = None
+	else:
+		g.user = get_db().execute(
+			'SELECT * FROM users WHERE id = ?', (user_id,)
+		).fetchone()
 @app.route('/logout')
 def logout():
 	"""Clear the current session, including the stored user id."""
@@ -123,21 +115,14 @@ def register():
 
     return render_template('auth/register.html', title='Register', year=datetime.now().year)
 
-@app.route('/about')
-def about():
-    """Renders the about page."""
-    return render_template('about.html',
-        title='About',
-        year=datetime.now().year,
-        message='Learn about Geographic Location Attribute Predictor System (GLAPS).')
-
-@app.route('/contact')
-def contact():
-    """Renders the contact page."""
-    return render_template('contact.html',
-        title='Contact',
-        year=datetime.now().year,
-        message='Please Contact us with any questions or concerns.')
+@app.route('/comingsoon')
+def comingsoon():
+    """
+        Renders the count down page. This page is a place holder for right now.
+    """
+    return render_template('comingsoon.html',
+        title='Coming Soon',
+        year=datetime.now().year)
 
 app.config["DEBUG"] = True
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
