@@ -62,11 +62,16 @@
                         map: resultsMap,
                         position: results[0].geometry.location
                     });
-                    var loc = results[0].address_components[1].short_name
-                    var loc2 = results[0].address_components[2].long_name
-                    var county = String(loc) + ", "+ String(loc2)
 
-                    document.getElementById('County').value = county;
+                    //shows the entire object data
+                    var myJSON = JSON.stringify(results);
+                    document.getElementById("County").value = myJSON;
+                   
+                    //var loc = results[0].address_components[1].short_name
+                    //var loc2 = results[0].address_components[2].long_name
+                    //var county = String(loc) + ", "+ String(loc2)
+
+                    //document.getElementById('County').value = county;
                 } else {
                     alert('Geocode was not successful for the following reason: ' + status);
                 }
@@ -83,6 +88,7 @@
 
             <h1>{{title}}<span>.</span></h1>
             <h2>{{message}}</h2>
+            <h3>{{errors}}</h3>
 
             <hr />
         </div>
