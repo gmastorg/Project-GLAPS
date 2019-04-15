@@ -1,0 +1,39 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 boxStyle" style="padding-right: 0px!important;padding-left: 0px!important;">
+        <div class="panel-body" style="padding-right: 4px!important;padding-left: 4px!important;">
+            <div class="span2">
+                <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
+            </div>
+
+            <div class="span8">
+                <h3>User Name</h3>
+                <h6>Email: MyEmail@servidor.com</h6>
+                <!--<h6>Ubication: Colombia</h6>
+                <h6>Old: 1 Year</h6>
+                <h6><a href="#">More... </a></h6>-->
+            </div>
+
+            <div class="span2">
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                        Action
+                        <span class="icon-cog icon-white"></span><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!--<li><button href="#"><span class="icon-wrench"></span> Modify</a></li>-->
+                        <li><button href="#"><span class="icon-trash"></span> Delete</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--This page is for show the forecast data from the GLAPS system-->
+    {% endblock %}
