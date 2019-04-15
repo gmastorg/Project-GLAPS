@@ -112,7 +112,9 @@
 
             <h1>{{title}}<span>.</span></h1>
             <h2>{{message}}</h2>
-            <h3>{{errors}}</h3>
+            
+            
+
 
             <hr />
         </div>
@@ -126,9 +128,11 @@
             <form name="GLAPS" id="GLAPS" method="post" action="">
                 <fieldset>
                     <div>
+                        <h3>{{countyError}}</h3>
                         <input name="County" type="text" id="County" placeholder="County" value="" />
                     </div>
                     <div>
+                        <h3>{{valueError}}</h3>
                         <input name="HomeVal" type="text" id="HomeVal" placeholder="Current Home Value" value="" />
                     </div>
                     <div>
