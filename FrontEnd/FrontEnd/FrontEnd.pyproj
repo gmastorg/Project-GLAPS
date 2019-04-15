@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FrontEnd\schema.sql" />
+    <Content Include="FrontEnd\States_Counties.csv" />
     <Content Include="FrontEnd\static\content\animate.css" />
     <Content Include="FrontEnd\static\content\base.css" />
     <Content Include="FrontEnd\static\content\fonts.css" />
@@ -177,6 +178,7 @@
     <Content Include="FrontEnd\templates\layout.html" />
     <Content Include="FrontEnd\templates\comingsoon.html" />
     <Content Include="FrontEnd\templates\test.html" />
+    <Content Include="FrontEnd\templates\visualizations.html" />
     <Content Include="glapsdb.sqlite" />
     <Content Include="requirements.txt" />
   </ItemGroup>

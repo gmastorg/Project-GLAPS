@@ -13,14 +13,23 @@ from FrontEnd.db import get_db
 
 #bp = Blueprint('auth', __name__, url_prefix='/auth')
 from datetime import datetime
-from flask import render_template
+from flask import render_template, Markup
 from FrontEnd import app
 import json
 
+
 @app.route('/')
+@app.route('/comingsoon')
+def commingsoon():
+    """
+        Renders the count down page. This page is a place holder for right now.
+    """
+    return render_template('comingsoon.html',
+        title='Coming Soon',
+        year=datetime.now().year)
+
 @app.route('/home')
 def home():
-    load_logged_in_user()
     """Renders the home page."""
     return render_template('home.html',
         title='Home Page',
@@ -37,16 +46,18 @@ def login_required(view):
 
 	return wrapped_view
 
-def load_logged_in_user():
-	"""If a user id is stored in the session, load the user object from
-	the database into ``g.user``."""
-	user_id = session.get('user_id')
+#@app.before_app_request #'Flask' object has no attribute 'before_app_request
+#def load_logged_in_user():
+#	"""If a user id is stored in the session, load the user object from
+#	the database into ``g.user``."""
+#	user_id = session.get('user_id')
 
-	if user_id is None:
-		g.user = None
-	else:
-		g.user = get_db().execute('SELECT * FROM users WHERE id = ?', (user_id,)).fetchone()
-
+#	if user_id is None:
+#		g.user = None
+#	else:
+#		g.user = get_db().execute(
+#			'SELECT * FROM user WHERE id = ?', (user_id,)
+#		).fetchone()
 @app.route('/logout')
 def logout():
 	"""Clear the current session, including the stored user id."""
@@ -106,42 +117,72 @@ def register():
         if error is None:
             db.execute('INSERT INTO users (username, email, password) VALUES (?,?,?)',(username, email, generate_password_hash(password)))
             db.commit()
-            return redirect(url_for('auth/login'))
+            return redirect(url_for('login'))
 
             flash(error)
 
     return render_template('auth/register.html', title='Register', year=datetime.now().year)
 
+@app.route('/about')
+def about():
+    """Renders the about page."""
+    return render_template('about.html',
+        title='About',
+        year=datetime.now().year,
+        message='Learn about Geographic Location Attribute Predictor System (GLAPS).')
+
+@app.route('/contact')
+def contact():
+    """Renders the contact page."""
+    return render_template('contact.html',
+        title='Contact',
+        year=datetime.now().year,
+        message='Please Contact us with any questions or concerns.')
+
+app.config["DEBUG"] = True
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
-    load_logged_in_user()
-    errors = ""
+    States_Counties= getState_CountiesList()
+    valueError = ""
+    countyError = ""
     if request.method == "POST":
         County = None
         HomeVal = None
-        try:
-            County = request.form['County']
-        except:
-            errors += "<p>{!r} is empty.</p>\n".format(request.form["County"])
+        
+        County = request.form['County']
+        
+        if County == "" or County == None:
+            countyError= Markup("<font color = red><bold>Please enter a County<bold></font>")
         try:
             HomeVal = int(request.form["HomeVal"])
         except:
-            errors += "<p>{!r} is not a number.</p>\n".format(request.form["HomeVal"])
-        if County is not None and HomeVal is not None:
-            result = getAPI()
-            return '''
-                <html>
-                    <body>
-                        <p>The medval is {result[0]}</p>
-                        <p><a href="/">Click here to calculate again</a>
-                    </body>
-                </html>
-            '''.format(result=result)
-    else:
+            valueError = Markup("<font color = red><bold>Please enter a Home Value<bold></font>")
+        if County != "" and HomeVal is not None and County != None:
+            for item in States_Counties:
+                if County == item: 
+                    result = getAPI()
+                    result = list(result[0].values())
+
+                    actualNoStad = str("{:,}".format(result[0]))
+                    actualWStad = str("{:,}".format(result[1]))
+                    medianNoStad = str("{:,}".format(result[2]))
+                    medianWStad = str("{:,}".format(result[3]))
+
+                    output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' +actualNoStad+ '</font>' +  \
+                    "<br><br>Current Home Value with a Stadium:   " +  '<font color="limegreen">$' +actualWStad+ '</font>' + \
+                   "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>' +" without a Stadium:   " +  '<font color="limegreen">$' +medianNoStad+ '</font>' + \
+                   "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>'+ " with a Stadium:   "  +'<font color="limegreen">$' +medianWStad+ '</font>' + \
+                   "<br><br><br><small>The predicted values have a PERCENT margin of error and were calculated using data from the 2017 U.S. Census</small>")
+                    return render_template('glaps.html',
+                    title='Home Value Predictor',
+                    bytearray=datetime.now().year,
+                    message=output)
+            countyError += Markup("<br>Please enter a County<br>")
         return render_template('glaps.html',
-        title='Value',
+        title='Home Value Predictor',
         bytearray=datetime.now().year,
-        message= 'Enter your information to display the value')
+        message= 'Enter your location on the map and your current home value below:',
+        countyError = countyError, valueError = valueError)
 
 @app.route('/test')
 def test():
@@ -150,36 +191,34 @@ def test():
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
 
+#View for the facets.html page
+@app.route('/visualizations')
+def visualizations():
+    """Renders the visualizations page."""
+    return render_template('visualizations.html')
+
 #method that gets data from GLAPS API
 def getAPI():
 
     myreqs = {"HomeVal":request.form['HomeVal'], "County":request.form['County']}
-    url = requests.get("http://127.0.0.1:5000/GLAPS", params=myreqs)
+    url = requests.get("http://gmastorg.pythonanywhere.com/GLAPS", params=myreqs)
     responseJson = json.loads(url.text)
 
     return responseJson
 
-@app.route('/comingsoon')
-def comingsoon():
-    """
-        Renders the count down page. This page is a place holder for right now.
-    """
-    return render_template('comingsoon.html',
-        title='Coming Soon',
-        year=datetime.now().year)
+import os
+import csv
 
-#@app.route('/about')
-#def about():
-#    """Renders the about page."""
-#    return render_template('about.html',
-#        title='About',
-#        year=datetime.now().year,
-#        message='Learn about Geographic Location Attribute Predictor System (GLAPS).')
-
-#@app.route('/contact')
-#def contact():
-#    """Renders the contact page."""
-#    return render_template('contact.html',
-#        title='Contact',
-#        year=datetime.now().year,
-#        message='Please Contact us with any questions or concerns.')
+def getState_CountiesList():
+    
+    States_Counties = []
+    path = os.path.abspath("States_Counties.csv")
+    with open(path) as file:
+        inputFile = csv.reader(file)
+        
+        for row in inputFile:
+             State_County=row[0]
+             States_Counties.append(State_County)
+     
+    States_Counties.pop(0)   
+    return States_Counties

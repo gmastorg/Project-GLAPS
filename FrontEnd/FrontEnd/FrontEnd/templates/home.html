@@ -59,6 +59,9 @@
                     <li><a class="smoothscroll" href="#services">Services.</a></li>
                     <li><a class="smoothscroll" href="#about">About.</a></li>
                     <li><a class="smoothscroll" href="#contact">Contact.</a></li>
+                    <li><a href="{{ url_for('visualizations') }}">Visualizations.</a></li>
+                    <li><a href="{{ url_for('glaps') }}">Predictions.</a></li>
+
                     {% if g.user %}
                     <li><span>{{ g.user['username'] }}</span>
                     <li>
@@ -474,7 +477,11 @@
                     <div class="service-content">
                         <p>
                             - Python<br />
-                            -
+                            - Keras<br />
+                            - SQLAlchemy<br />
+                            - Pandas<br />
+                            - TensorFlow<br />
+                            - Google Cloud API<br />
                         </p>
                     </div>
                 </div> <!-- end bgrid -->
@@ -496,7 +503,7 @@
 
                     <div class="service-content">
                         <p>
-                            Gaberiela Canjura<br>
+                            Gabriela Canjura<br>
                             Mallory Milstead<br>
                         </p>
                     </div>
@@ -612,13 +619,15 @@
                         <div class="mask"></div>
                     </div>
                     <div class="member-name">
-                        <h3>Gaberiela Canjura</h3>
+                        <h3>Gabriela Canjura</h3>
                         <span>GLAPS Engineer</span>
                     </div>
 
                     <p>
                         - C# <br />
                         - Python <br />
+                        - Java <br />
+                        - SAS 
                     </p>
 
                     <ul class="member-social">
@@ -642,7 +651,7 @@
                         - C# <br />
                         - Python <br />
                         - Database management <br />
-                        - SASS
+                        - SAS
                     </p>
 
                     <ul class="member-social">

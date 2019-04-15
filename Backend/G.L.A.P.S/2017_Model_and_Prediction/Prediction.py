@@ -3,6 +3,8 @@ import os
 import pandas as pd
 from sqlalchemy import create_engine
 from sklearn.externals import joblib
+from keras import backend as K
+
 
 #gets the line of current data from table to use for prediction
 
@@ -44,6 +46,9 @@ def prediction(stateCountyString, Homeval):
     #gets the path for the model
     path = os.path.abspath('model_2017_4.h5')
 
+    #Clear the session
+    
+
     #loads the model
     model = load_model(path)
 
@@ -61,6 +66,9 @@ def prediction(stateCountyString, Homeval):
         scaledInput[0][14] = 1
 
         predictionS = model.predict(scaledInput)
+
+        #Clear the session
+        K.clear_session()
 
         predictionS = scaler_targets.inverse_transform(predictionS)
         predictionS = (predictionS[0][0])
