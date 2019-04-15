@@ -141,41 +141,42 @@ def contact():
 
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
-    errors=""
     if request.method == "POST":
         County = None
         HomeVal = None
-        try:
-            County = request.form['County']
-        except:
-            errors += "<p>{!r} is empty.</p>\n".format(request.form["County"])
+        
+        County = request.form['County']
+        
+        if County == "" or County == None:
+            errors += Markup("<br>Please enter a County<br>")
         try:
             HomeVal = int(request.form["HomeVal"])
         except:
-            errors += "<p>{!r} is not a number.</p>\n".format(request.form["HomeVal"])
-        if County is not None and HomeVal is not None:
-            result = getAPI()
-            result = list(result[0].values())
+            errors += Markup("<br>Please enter a Home Value<br>")
+        if County != "" and HomeVal is not None and County != None:
+                result = getAPI()
+                result = list(result[0].values())
 
-            actualNoStad = str("{:,}".format(result[0]))
-            actualWStad = str("{:,}".format(result[1]))
-            medianNoStad = str("{:,}".format(result[2]))
-            medianWStad = str("{:,}".format(result[3]))
+                actualNoStad = str("{:,}".format(result[0]))
+                actualWStad = str("{:,}".format(result[1]))
+                medianNoStad = str("{:,}".format(result[2]))
+                medianWStad = str("{:,}".format(result[3]))
 
-            output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' +actualNoStad+ '</font>' +  \
-            "<br><br>Current Home Value with a Stadium:   " +  '<font color="limegreen">$' +actualWStad+ '</font>' + \
-           "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>' +" without a Stadium:   " +  '<font color="limegreen">$' +medianNoStad+ '</font>' + \
-           "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>'+ " with a Stadium:   "  +'<font color="limegreen">$' +medianWStad+ '</font>' + \
-           "<br><br><br><small>The predicted values have a PERCENT margin of error and were calculated using data from the 2017 U.S. Census</small>")
-            return render_template('glaps.html',
-            title='Home Value Predictor',
-            bytearray=datetime.now().year,
-            message=output)
-    else: 
-        return render_template('glaps.html',
+                output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' +actualNoStad+ '</font>' +  \
+                "<br><br>Current Home Value with a Stadium:   " +  '<font color="limegreen">$' +actualWStad+ '</font>' + \
+               "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>' +" without a Stadium:   " +  '<font color="limegreen">$' +medianNoStad+ '</font>' + \
+               "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>'+ " with a Stadium:   "  +'<font color="limegreen">$' +medianWStad+ '</font>' + \
+               "<br><br><br><small>The predicted values have a PERCENT margin of error and were calculated using data from the 2017 U.S. Census</small>")
+                return render_template('glaps.html',
+                title='Home Value Predictor',
+                bytearray=datetime.now().year,
+                message=output)
+
+    return render_template('glaps.html',
         title='Home Value Predictor',
         bytearray=datetime.now().year,
-        message= 'Enter your location on the map and your current home value below:')
+        message= 'Enter your location on the map and your current home value below:',
+        errors = errors)
 
 @app.route('/test')
 def test():
