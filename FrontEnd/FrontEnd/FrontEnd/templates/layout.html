@@ -51,7 +51,9 @@
 
                 <ul id="nav" class="nav">
                     <li><a href="{{ url_for('home') }}">Home.</a></li>
-                    {% if g.user %}                    
+                    {% if g.user %}
+                    <li><a href="{{ url_for('glaps') }}"><span class="glyphicon glyphicon-glaps"></span> Glaps</a></li>
+                    <li><a href="{{ url_for('visualizations') }}"><span class="glyphicon glyphicon-visualizations"></span> Visualizations</a></li>
                     <li><span>{{ g.user['username'] }}</span>
                     <li>
                         <a href="{{ url_for('logout') }}">Log Out</a>
