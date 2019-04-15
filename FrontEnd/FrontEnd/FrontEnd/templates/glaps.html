@@ -62,6 +62,37 @@
                         map: resultsMap,
                         position: results[0].geometry.location
                     });
+                    var loc1 = results[0];
+                    var county, state;
+                    $.each(loc1, function (k1, v1) {
+                        if (k1 == "address_components") {
+                            for (var i = 0; i < v1.length; i++) {
+                                for (k2 in v1[i]) {
+                                    if (k2 == "types") {
+                                        var types = v1[i][k2];
+                                        if (types[0] == "administrative_area_level_2") {
+                                            county = v1[i].long_name;
+                                            //alert ("county: " + county);
+                                        }
+                                        if (types[0] == "administrative_area_level_1") {
+                                            state = v1[i].long_name;
+                                            //alert ("state: " + state);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    });
+
+                    if (county == "" || county == "undefined" || county == null) {
+                        alert ("Could not locate County. Please enter an exact street address.");
+                    }
+
+                    var county = String(county) + ", " + String(state)
 
                     //shows the entire object data
                     var myJSON = JSON.stringify(results);
