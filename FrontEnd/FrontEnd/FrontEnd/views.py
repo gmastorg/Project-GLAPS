@@ -143,7 +143,7 @@ app.config["DEBUG"] = True
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
 
-    State_Counties= getState_CountiesList()
+    States_Counties= getState_CountiesList()
     errors=""
     if request.method == "POST":
         County = None
@@ -151,7 +151,7 @@ def glaps():
         
         County = request.form['County']
         
-        if County == "" or County == None:
+        if (County == "" or County == None) and County not in States_Counties:
             errors += Markup("<br>Please enter a County<br>")
         try:
             HomeVal = int(request.form["HomeVal"])
@@ -180,7 +180,8 @@ def glaps():
         title='Home Value Predictor',
         bytearray=datetime.now().year,
         message= 'Enter your location on the map and your current home value below:',
-        errors=errors)
+        errors=errors,
+        States_Counties=States_Counties)
 
 
 @app.route('/test')
@@ -217,8 +218,7 @@ def getState_CountiesList():
         
         for row in inputFile:
              State_County=row[0]
-             States_Counties.append(movie)
+             States_Counties.append(State_County)
      
-    States_Counties.pop(0)
-    
+    States_Counties.pop(0)   
     return States_Counties
