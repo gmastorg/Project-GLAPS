@@ -2,22 +2,20 @@
 Routes and views for the flask application.
 """
 import functools
-
+import os
+import csv
 import requests
+import json
+
 from flask import (
 	Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 from werkzeug.security import check_password_hash, generate_password_hash
-
 from FrontEnd.db import get_db
-
-#bp = Blueprint('auth', __name__, url_prefix='/auth')
 from datetime import datetime
 from flask import render_template, Markup
 from FrontEnd import app
-import json
-
-
+#bp = Blueprint('auth', __name__, url_prefix='/auth')
 @app.route('/')
 @app.route('/home')
 def home():
@@ -47,9 +45,8 @@ def load_logged_in_user():
 	if user_id is None:
 		g.user = None
 	else:
-		g.user = get_db().execute(
-			'SELECT * FROM users WHERE id = ?', (user_id,)
-		).fetchone()
+		g.user = get_db().execute('SELECT * FROM users WHERE id = ?', (user_id,)).fetchone()
+
 @app.route('/logout')
 def logout():
 	"""Clear the current session, including the stored user id."""
@@ -127,24 +124,25 @@ def comingsoon():
 app.config["DEBUG"] = True
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
-    States_Counties= getState_CountiesList()
+    load_logged_in_user()
+    States_Counties = getState_CountiesList()
     valueError = ""
     countyError = ""
     if request.method == "POST":
         County = None
         HomeVal = None
-        
+
         County = request.form['County']
-        
+
         if County == "" or County == None:
-            countyError= Markup("<font color = red><bold>Please enter a County<bold></font>")
+            countyError = Markup("<font color = red><bold>Please enter a County<bold></font>")
         try:
             HomeVal = int(request.form["HomeVal"])
         except:
             valueError = Markup("<font color = red><bold>Please enter a Home Value<bold></font>")
         if County != "" and HomeVal is not None and County != None:
             for item in States_Counties:
-                if County == item: 
+                if County == item:
                     result = getAPI()
                     result = list(result[0].values())
 
@@ -153,26 +151,30 @@ def glaps():
                     medianNoStad = str("{:,}".format(result[2]))
                     medianWStad = str("{:,}".format(result[3]))
 
-                    output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' +actualNoStad+ '</font>' +  \
-                    "<br><br>Current Home Value with a Stadium:   " +  '<font color="limegreen">$' +actualWStad+ '</font>' + \
-                   "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>' +" without a Stadium:   " +  '<font color="limegreen">$' +medianNoStad+ '</font>' + \
-                   "<br><br>Median Value of Homes in " + '<font color="yellow">'+ County + '</font>'+ " with a Stadium:   "  +'<font color="limegreen">$' +medianWStad+ '</font>' + \
+                    output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' + actualNoStad + '</font>' + \
+                    "<br><br>Current Home Value with a Stadium:   " + '<font color="limegreen">$' + actualWStad + '</font>' + \
+                   "<br><br>Median Value of Homes in " + '<font color="yellow">' + County + '</font>' + " without a Stadium:   " + '<font color="limegreen">$' + medianNoStad + '</font>' + \
+                   "<br><br>Median Value of Homes in " + '<font color="yellow">' + County + '</font>' + " with a Stadium:   " + '<font color="limegreen">$' + medianWStad + '</font>' + \
                    "<br><br><br><small>The predicted values have a PERCENT margin of error and were calculated using data from the 2017 U.S. Census</small>")
+
                     return render_template('glaps.html',
                     title='Home Value Predictor',
                     bytearray=datetime.now().year,
                     message=output)
-            countyError += Markup("<br>Please enter a County<br>")
-        return render_template('glaps.html',
+
+                countyError = Markup("<font color = red><bold>Please enter a County<bold></font>")
+
+    return render_template('glaps.html',
         title='Home Value Predictor',
         bytearray=datetime.now().year,
         message= 'Enter your location on the map and your current home value below:',
         countyError = countyError, valueError = valueError)
 
-@app.route('/test')
-def test():
-    return render_template('test.html',
-        title='test',
+@app.route('/account')
+def account():
+    load_logged_in_user()
+    return render_template('account.html',
+        title='Account',
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
 
@@ -191,19 +193,16 @@ def getAPI():
 
     return responseJson
 
-import os
-import csv
-
 def getState_CountiesList():
-    
+
     States_Counties = []
     path = os.path.abspath("States_Counties.csv")
     with open(path) as file:
         inputFile = csv.reader(file)
-        
+
         for row in inputFile:
-             State_County=row[0]
+             State_County = row[0]
              States_Counties.append(State_County)
-     
-    States_Counties.pop(0)   
+
+    States_Counties.pop(0)
     return States_Counties

@@ -5,64 +5,52 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 <head>
-
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
     <title>GLAPS-Home</title>
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="../static/content/kreo/css/base.css">
     <link rel="stylesheet" href="../static/content/kreo/css/vendor.min.css">
     <link rel="stylesheet" href="../static/content/kreo/css/main.css">
-
     <!-- script
     ================================================== -->
     <script src="../static/scripts/kreo/js/modernizr.js"></script>
-
     <!-- favicons
      ================================================== -->
-    <link rel="icon" type="image/png" href="/static/images/g.png">
+    <link rel="icon" type="image/png" href="/static/images/ggg.png">
 </head>
-
 <body>
-
     <!-- header
     ================================================== -->
     <header id="main-header">
-
         <div class="row">
-
             <div class="logo">
                 <a href="{{ url_for('home') }}">GLAPS</a>
             </div>
-
             <nav id="nav-wrap">
-
                 <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
                     <span class="menu-icon">Menu</span>
                 </a>
                 <a class="mobile-btn" href="#" title="Hide navigation">
                     <span class="menu-icon">Menu</span>
                 </a>
-
                 <ul id="nav" class="nav">
                     <li><a class="smoothscroll" href="#hero">Home.</a></li>
-                    <li class="current"><a class="smoothscroll" href="#portfolio">Works.</a></li>
+                    <li class="current"><a class="smoothscroll" href="#portfolio">Software.</a></li>
                     <li><a class="smoothscroll" href="#services">Services.</a></li>
                     <li><a class="smoothscroll" href="#about">About.</a></li>
                     <li><a class="smoothscroll" href="#contact">Contact.</a></li>
                     {% if g.user %}
                     <li><a href="{{ url_for('glaps') }}"><span class="glyphicon glyphicon-glaps"></span> Glaps</a></li>
                     <li><a href="{{ url_for('visualizations') }}"><span class="glyphicon glyphicon-visualizations"></span> Visualizations</a></li>
-                    <li><span>{{ g.user['username'] }}</span>
+                    <li><a href="{{ url_for('account') }}"><span class="glyphicon glyphicon-log-in"></span>{{ g.user['username'] }} </a></li>
                     <li>
                         <a href="{{ url_for('logout') }}">Log Out</a>
                         {% else %}
@@ -71,7 +59,6 @@
                     {% endif %}
                 </ul> <!-- end #nav -->
             </nav> <!-- end #nav-wrap -->
-
             <ul class="header-social">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -82,56 +69,45 @@
     <!-- homepage hero
     ================================================== -->
     <section id="hero">
-
         <div class="row hero-content">
-
             <div class="twelve columns hero-container">
-
                 <!-- hero-slider start-->
                 <div id="hero-slider" class="flexslider">
-
                     <ul class="slides">
-
                         <!-- slide -->
                         <li>
                             <div class="flex-caption">
                                 <h1 class="">
                                     Say hello to <span>Geographic Location Attribute Predictor System.</span> Or GLAPS for short.
                                 </h1>
-
                                 <h3 class="">
                                     please scroll down to learn more about GLAPS.
                                 </h3>
                             </div>
                         </li>
-
                         <!-- slide -->
                         <li>
                             <div class="flex-caption">
                                 <h1 class="">
                                     We are a small team of 4 dedicated to building and delivering you a great product.
                                 </h1>
-
-                                <h3 class="">Info</h3>
+                                <h3 class="">We are looking to expand the project to other cities in due time.</h3>
                             </div>
                         </li>
-
                         <!-- slide -->
                         <li>
                             <div class="flex-caption">
                                 <h1 class="">
-                                    Take a look at some of <a class="smoothscroll" href="#portfolio" title="portfolio">our works</a> or
+                                    Take a look at some of <a class="smoothscroll" href="#portfolio" title="portfolio">the software</a> used or
                                     <a class="smoothscroll" href="#contact" title="contact us">get in touch</a> to discuss how we can help you.
                                 </h1>
-
-                                <h3 class="">Redo the above.</h3>
+                                <h3 class="">Should you have any questions about the project or software used, feel free to ask.</h3>
                             </div>
                         </li>
                     </ul>
                 </div> <!-- end hero-slider -->
             </div> <!-- end twelve columns-->
         </div> <!-- end row -->
-
         <div id="more">
             <a class="smoothscroll" href="#services">More About Us<i class="fa fa-angle-down"></i></a>
         </div>
@@ -139,363 +115,257 @@
     <!-- portfolio
     ================================================== -->
     <section id="portfolio">
-
         <div class="row section-head">
-
             <div class="twelve columns">
-
-                <h1>Our Latest Projects<span>.</span></h1>
-
+                <h1>Software Used<span>.</span></h1>
                 <hr />
-
                 <p>
                     GLAPS is a machine learning program that will take your address and home value to predict its value in the coming years.
                     This is a CapStone project comprised of 4 team members 2 working on front end, and 2 working on the back end from Fayetteville Technical Community College.
+                    List of software that was used in this endeavor is listed below.
                 </p>
             </div>
         </div> <!-- end section-head -->
-
         <div class="row items">
-
             <!-- portfolio-wrapper -->
             <div id="portfolio-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half">
-
                 <div class="bgrid folio-item">
                     <div class="item-wrap">
                         <a href="#modal-01">
-                            <img src="images/portfolio/underwater.jpg" alt="Underwater">
+                            <img src="/static/images/HomePage/census_image.png" alt="Census">
                             <div class="overlay"></div>
                             <div class="portfolio-item-meta">
-                                <h5>Underwater</h5>
-                                <p>Videography</p>
+                                <h5>Census</h5>
+                                <p>Base Home Value</p>
                             </div>
                             <div class="link-icon"><i class="fa fa-plus"></i></div>
                         </a>
                     </div>
-                </div> <!-- item end -->
-
+                </div> <!-- item end 01 -->
                 <div class="bgrid folio-item">
                     <div class="item-wrap">
                         <a href="#modal-02">
-                            <img src="images/portfolio/hotel.jpg" alt="Hotel Sign">
+                            <img src="/static/images/HomePage/model_image.png" alt="Model Image">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
-                                    <h5>Hotel Sign</h5>
+                                    <h5>Model Image</h5>
                                     <p>Branding</p>
                                 </div>
                             </div>
                             <div class="link-icon"><i class="fa fa-plus"></i></div>
                         </a>
                     </div>
-                </div> <!-- item end -->
-
+                </div> <!-- item end 02 -->
                 <div class="bgrid folio-item">
                     <div class="item-wrap">
                         <a href="#modal-03">
-                            <img src="images/portfolio/beetle.jpg" alt="Beetle">
+                            <img src="/static/images/HomePage/pa_image.png" alt="Beetle">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
-                                    <h5>Beetle</h5>
+                                    <h5>PythonAnywhere</h5>
                                     <p>Webdesign</p>
                                 </div>
                             </div>
                             <div class="link-icon"><i class="fa fa-plus"></i></div>
                         </a>
                     </div>
-                </div> <!-- item end -->
-
+                </div> <!-- item end 03 -->
                 <div class="bgrid folio-item">
                     <div class="item-wrap">
                         <a href="#modal-04">
-                            <img src="images/portfolio/banjo-player.jpg" alt="Banjo Player">
+                            <img src="/static/images/HomePage/pandas_image.png" alt="Banjo Player">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
-                                    <h5>Banjo Player</h5>
-                                    <p>Photography</p>
+                                    <h5>Pandas</h5>
+                                    <p>Modeling</p>
                                 </div>
                             </div>
                             <div class="link-icon"><i class="fa fa-plus"></i></div>
                         </a>
                     </div>
-                </div> <!-- item end -->
-
+                </div> <!-- item end 04 -->
                 <div class="bgrid folio-item">
                     <div class="item-wrap">
                         <a href="#modal-05">
-                            <img src="images/portfolio/lighthouse.jpg" alt="Lighthouse">
+                            <img src="/static/images/HomePage/scalar_image.png" alt="Lighthouse">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
-                                    <h5>Lighthouse</h5>
-                                    <p>Web Development</p>
+                                    <h5>Scalar</h5>
+                                    <p>Modeling</p>
                                 </div>
                             </div>
                             <div class="link-icon"><i class="fa fa-plus"></i></div>
                         </a>
                     </div>
-                </div> <!-- item end -->
-
+                </div> <!-- item end 05 -->
                 <div class="bgrid folio-item">
                     <div class="item-wrap">
                         <a href="#modal-06">
-                            <img src="images/portfolio/girl.jpg" alt="Girl Stuff">
+                            <img src="/static/images/HomePage/sqlite_image.png" alt="Girl Stuff">
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
-                                    <h5>Girl Stuff</h5>
-                                    <p>Photography</p>
+                                    <h5>SQLite</h5>
+                                    <p>Database</p>
                                 </div>
                             </div>
                             <div class="link-icon"><i class="fa fa-plus"></i></div>
                         </a>
                     </div>
-                </div> <!-- item end -->
-
-                <div class="bgrid folio-item">
-                    <div class="item-wrap">
-                        <a href="#modal-07">
-                            <img src="images/portfolio/coffee.jpg" alt="Coffee Cup">
-                            <div class="overlay">
-                                <div class="portfolio-item-meta">
-                                    <h5>Coffee Cup</h5>
-                                    <p>Branding</p>
-                                </div>
-                            </div>
-                            <div class="link-icon"><i class="fa fa-plus"></i></div>
-                        </a>
-                    </div>
-                </div> <!-- item end -->
-
-                <div class="bgrid folio-item">
-                    <div class="item-wrap">
-                        <a href="#modal-08">
-                            <img src="images/portfolio/judah.jpg" alt="Judah">
-                            <div class="overlay">
-                                <div class="portfolio-item-meta">
-                                    <h5>Judah</h5>
-                                    <p>Webdesign</p>
-                                </div>
-                            </div>
-                            <div class="link-icon"><i class="fa fa-plus"></i></div>
-                        </a>
-                    </div>
-                </div>  <!-- item end -->
+                </div> <!-- item end 06 -->
             </div> <!-- end portfolio-wrapper -->
             <!-- modal popup
             ========================================================= -->
             <div id="modal-01" class="popup-modal mfp-hide">
-
                 <div class="media">
-                    <img src="images/portfolio/modals/m-underwater.jpg" alt="Underwater" />
+                    <img src="/static/images/HomePage/census_image.png" alt="Census" />
                 </div>
-
                 <div class="description-box">
-                    <h4>Underwater</h4>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                    <span class="categories">Videography</span>
+                    <h4>Census Data</h4>
+                    <p>
+                        Using Python's requests library, we make calls to the US Census' API to obtain data for counties in all 50 states.
+                        We gathered data for each county including population, total number of houses and median family income.
+                    </p>
+                    <span class="categories">Base-Home-Value</span>
                 </div>
-
                 <div class="link-box group">
-                    <a href="http://www.behance.net">Details</a>
+                    <a href="https://www.census.gov/">Details</a>
                     <a href="#" class="popup-modal-dismiss">Close</a>
                 </div>
             </div><!-- modal-01 end -->
-
             <div id="modal-02" class="popup-modal mfp-hide">
-
                 <div class="media">
-                    <img src="images/portfolio/modals/m-hotel.jpg" alt="Hotel Sign" />
+                    <img src="/static/images/HomePage/model_image.png" alt="Model Image" />
                 </div>
-
                 <div class="description-box">
-                    <h4>Hotel Sign</h4>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                    <span class="categories">Branding, Web Development</span>
+                    <h4>Model Image</h4>
+                    <p>
+                        The keras neural-network API is utilized with Tensorflow back-end to define the linear model.
+                        The model is then trained and a prediction is made.
+                    </p>
+                    <span class="categories">Modeling</span>
                 </div>
-
                 <div class="link-box">
-                    <a href="http://www.behance.net">Details</a>
+                    <a href="https://keras.io/">Details</a>
                     <a href="#" class="popup-modal-dismiss">Close</a>
                 </div>
             </div><!-- modal-02 end -->
-
             <div id="modal-03" class="popup-modal mfp-hide">
-
                 <div class="media">
-                    <img src="images/portfolio/modals/m-beetle.jpg" alt="" />
+                    <img src="/static/images/HomePage/pa_image.png" alt="" />
                 </div>
-
                 <div class="description-box">
-                    <h4>Beetle</h4>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                    <h4>PythonAnywhere</h4>
+                    <p>
+                        PythonAnywhere allowed us to host our machine-learning model, scalers and database online.
+                        It was an excellent solution for running all of our code on the web and allowed us to take our project live.
+                        Thank you PythonAnywhere!
+                    </p>
                     <span class="categories">Webdesign</span>
                 </div>
-
                 <div class="link-box">
-                    <a href="http://www.behance.net">Details</a>
+                    <a href="https://www.pythonanywhere.com/">Details</a>
                     <a href="#" class="popup-modal-dismiss">Close</a>
                 </div>
             </div><!-- modal-03 end -->
-
             <div id="modal-04" class="popup-modal mfp-hide">
-
                 <div class="media">
-                    <img src="images/portfolio/modals/m-banjo-player.jpg" alt="" />
+                    <img src="/static/images/HomePage/pandas_image.png" alt="" />
                 </div>
-
                 <div class="description-box">
-                    <h4>Banjo Player</h4>
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                    <span class="categories">Photography</span>
+                    <h4>Pandas</h4>
+                    <p>
+                        Using the pandas library, we create a dataframe with the data from 2017.
+                        At this time, that is the most up-to-date data available.
+                    </p>
+                    <span class="categories">Modeling</span>
                 </div>
-
                 <div class="link-box">
-                    <a href="http://www.behance.net">Details</a>
+                    <a href="https://pandas.pydata.org/">Details</a>
                     <a href="#" class="popup-modal-dismiss">Close</a>
                 </div>
             </div><!-- modal-04 end -->
-
             <div id="modal-05" class="popup-modal slider mfp-hide">
-
                 <div class="media">
-                    <img src="images/portfolio/modals/m-lighthouse.jpg" alt="" />
+                    <img src="/static/images/HomePage/scalar_image.png" alt="" />
                 </div>
-
                 <div class="description-box">
-                    <h4>Lighthouse</h4>
-
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-                    <div class="categories">Web Development</div>
+                    <h4>Sklearn</h4>
+                    <p>
+                        Sklearn's MinMaxScaler is used to normalize the data to a value between 0 and 1.
+                        The scalers are then used to unnormalize the final prediction.
+                    </p>
+                    <div class="categories">Modeling</div>
                 </div>
-
                 <div class="link-box">
-                    <a href="http://www.behance.net">Details</a>
+                    <a href="https://scikit-learn.org/stable/">Details</a>
                     <a href="#" class="popup-modal-dismiss">Close</a>
                 </div>
             </div><!-- modal-05 end -->
-
             <div id="modal-06" class="popup-modal mfp-hide">
-
                 <div class="media">
-                    <img src="images/portfolio/modals/m-girl.jpg" alt="" />
+                    <img src="/static/images/HomePage/sqlite_image.png" alt="" />
                 </div>
-
                 <div class="description-box">
-                    <h4>Girl Stuff</h4>
-
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-                    <div class="categories">Photography</div>
+                    <h4>SQLite</h4>
+                    <p>
+                        A SQlite3 database was the best choice to store our data.
+                        The database is actually a single compact file, is easily transfered from one system to another and requires no administration.
+                    </p>
+                    <div class="categories">Database</div>
                 </div>
-
                 <div class="link-box">
-                    <a href="http://www.behance.net">Details</a>
+                    <a href="https://www.sqlite.org/index.html">Details</a>
                     <a href="#" class="popup-modal-dismiss">Close</a>
                 </div>
             </div><!-- modal-06 end -->
-
-            <div id="modal-07" class="popup-modal mfp-hide">
-
-                <div class="media">
-                    <img src="images/portfolio/modals/m-coffee.jpg" alt="" />
-                </div>
-
-                <div class="description-box">
-                    <h4>Coffee Cup</h4>
-
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-                    <div class="categories">Branding</div>
-                </div>
-
-                <div class="link-box">
-                    <a href="http://www.behance.net">Details</a>
-                    <a href="#" class="popup-modal-dismiss">Close</a>
-                </div>
-            </div><!-- modal-07 end -->
-
-            <div id="modal-08" class="popup-modal mfp-hide">
-
-                <div class="media">
-                    <img src="images/portfolio/modals/m-judah.jpg" alt="" />
-                </div>
-
-                <div class="description-box">
-                    <h4>Judah</h4>
-
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-
-                    <div class="categories">Webdesign</div>
-                </div>
-
-                <div class="link-box">
-                    <a href="http://www.behance.net">Details</a>
-                    <a href="#" class="popup-modal-dismiss">Close</a>
-                </div>
-            </div><!-- modal-08 end -->
         </div>  <!-- end row -->
     </section> <!-- end portfolio -->
     <!-- Services Section
     ================================================== -->
     <section id="services">
-
         <div class="row section-head">
-
             <div class="twelve columns">
-
                 <h1>Get To Know GLAPS.<span>.</span></h1>
-
                 <hr />
-
                 <p>
-                    GLAPS is a machine learning program that will take your address and home value to predict its value in the coming years.
+                    GLAPS is a machine learning program that will take your address and home value to predict its value with/without a stadium in your location.
                 </p>
             </div>
         </div> <!-- end section-head -->
-
         <div class="row mobile-no-padding">
-
             <div class="service-list bgrid-third s-bgrid-half tab-bgrid-whole group">
-
                 <div class="bgrid">
-
                     <h3>Front-end Code.</h3>
-
                     <div class="service-content">
                         <p>
                             - Python<br />
-                            - HTML<br />
-                            - BootStrap
+                            - CSS<br />
+                            - JavaScript<br />
+                            - HTML5<br />
                         </p>
                     </div>
                 </div> <!-- end bgrid -->
-
                 <div class="bgrid">
-
                     <h3>Back-end Code.</h3>
-
                     <div class="service-content">
                         <p>
                             - Python<br />
-                            -
                         </p>
                     </div>
                 </div> <!-- end bgrid -->
-
                 <div class="bgrid">
-
-                    <h3>Need a name.</h3>
-
+                    <h3>Software</h3>
                     <div class="service-content">
                         <p>
-                            info
+                            - Visual Studio Code<br />
+                            - Visual Studio
+                            - Spyder Anaconda
+                            - Jupyter Notebook
                         </p>
                     </div>
                 </div> <!-- end bgrid -->
-
                 <div class="bgrid">
-
                     <h3>GLAPS Development.</h3>
-
                     <div class="service-content">
                         <p>
                             Gaberiela Canjura<br>
@@ -503,11 +373,8 @@
                         </p>
                     </div>
                 </div> <!-- end bgrid -->
-
                 <div class="bgrid">
-
                     <h3>Web Design.</h3>
-
                     <div class="service-content">
                         <p>
                             Brian Schweikart<br>
@@ -515,11 +382,8 @@
                         </p>
                     </div>
                 </div> <!-- end bgrid -->
-
                 <div class="bgrid">
-
                     <h3>Free of Charge</h3>
-
                     <div class="service-content">
                         <p>
                             This product is 100% free with no hidden fees. All that we ask of you is a quick and painless registration. Very little information is need. We don't even need your name.
@@ -532,105 +396,75 @@
     <!-- About Section
     ================================================== -->
     <section id="about">
-
         <div class="row section-head">
-
             <div class="twelve columns">
-
                 <h1>Who Are We<span>.</span></h1>
-
                 <hr />
-
                 <p>
                     This is a CapStone project comprised of 4 team members 2 working on the front end, and 2 working on the back end. We a strong group of students from Fayetteville Technical Community College who are taking the past two years to produce a product
                     from all that we have learned. We have learned in order for a project to be successful the team must work as a family, use each others strengths while building each others weakness up.
                 </p>
             </div> <!-- end section-head -->
         </div>
-
         <div class="row mobile-no-padding">
-
             <div class="process bgrid-half tab-bgrid-whole group">
-
                 <div class="bgrid">
-
                     <h3>Our Process.</h3>
-
                     <p>
-                        Front-End
-
-                        Back-End
+                        With the scale of the project both teams set off on each section for the first 12 weeks. In week 14 we joined back as one team to work on combining the two projects into one. The Front-End team split each section of the site into bit sized bits
+                        that each could work one. The Back-End team followed a similar suite but need to work less independently as the Front-End team.
                     </p>
                 </div>
-
                 <div class="bgrid">
-
                     <h3>Our Approach.</h3>
-
                     <p>
                         We set a deadline for each part of the project to have a usable part so the two projects and be combined into one. With our group being split into two each group sets its members roles and work time frame.
                         For the Front-End Jesse handles most of the presentable's and sub pages for the site. Brian is tasked with the overall design of the site and handling the merger of both projects.
                     </p>
                 </div>
-
                 <div class="bgrid">
-
                     <h3>Our Goal.</h3>
-
                     <p>
                         GLAPS over all goal is the ability to take a current home value and by using the US Census be able to calculate the value of the home up x years.
                     </p>
                 </div>
-
                 <div class="bgrid">
-
                     <h3>Our Mission.</h3>
-
                     <p>
                         Provide the best product from what we have learned while over stepping our own abilities to learn material outside of our course work.
                     </p>
                 </div>
             </div> <!-- end process -->
         </div> <!-- end row -->
-
         <div class="row team section-head">
-
             <div class="twelve columns">
-
                 <h1>Meet Our Team<span>.</span></h1>
-
                 <hr />
             </div>
         </div> <!-- end section-head -->
-
         <div class="row">
-
             <div id="team-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half mob-bgrid-whole group">
-
                 <div class="bgrid member">
-
                     <div class="member-pic">
-                        <img src="images/team/member01-k.jpg" alt="" />
+                        <img src="" alt="" />
                         <div class="mask"></div>
                     </div>
                     <div class="member-name">
                         <h3>Gaberiela Canjura</h3>
                         <span>GLAPS Engineer</span>
                     </div>
-
                     <p>
                         - C# <br />
                         - Python <br />
+                        - Database management <br />
+                        - SAS
                     </p>
-
                     <ul class="member-social">
                         <li><a href="https://github.com/gmastorg"><i class="fa fa-github"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div> <!-- end member -->
-
                 <div class="bgrid member">
-
                     <div class="member-pic">
                         <img src="../static/images/team/mallory.jpg" alt="" />
                         <div class="mask"></div>
@@ -639,22 +473,18 @@
                         <h3>Mallory Milstead</h3>
                         <span>GLAPS Engineer</span>
                     </div>
-
                     <p>
                         - C# <br />
                         - Python <br />
                         - Database management <br />
-                        - SASS
+                        - SAS
                     </p>
-
                     <ul class="member-social">
                         <li><a href="https://github.com/milsteam4144"><i class="fa fa-github"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div> <!-- end member -->
-
                 <div class="bgrid member">
-
                     <div class="member-pic">
                         <img src="../static/images/team/jesse.jpg" alt="" />
                         <div class="mask"></div>
@@ -663,21 +493,17 @@
                         <h3>Jesse Watts</h3>
                         <span>Web Designer</span>
                     </div>
-
                     <p>
                         - C# <br />
                         - Python <br />
                         - Database management
                     </p>
-
                     <ul class="member-social">
                         <li><a href="https://github.com/JesseWatts"><i class="fa fa-github"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div> <!-- end member -->
-
                 <div class="bgrid member">
-
                     <div class="member-pic">
                         <img src="../static/images/team/brain.jpg" alt="" />
                         <div class="mask"></div>
@@ -686,14 +512,12 @@
                         <h3>Brian Schweikart</h3>
                         <span>Web Designer</span>
                     </div>
-
                     <p>
                         - C# <br />
                         - Python <br />
                         - C++ <br />
                         - Database management
                     </p>
-
                     <ul class="member-social">
                         <li><a href="https://github.com/BSchweikart"><i class="fa fa-github"></i></a></li>
                         <li><a href="https://www.linkedin.com/in/bschweikart"><i class="fa fa-linkedin"></i></a></li>
@@ -701,19 +525,13 @@
                 </div> <!-- end member -->
             </div> <!-- end team-wrapper -->
         </div> <!-- end row -->
-
         <div id="call-to-action">
-
             <div class="row section-ads">
-
                 <div class="twelve columns">
-
                     <h2>Welcome to GlAPS</h2>
-
                     <p>
                         Do you want to take full advantage of GLAPS, well first you have to register!
                     </p>
-
                     <div class="action">
                         <a href="{{ url_for('register') }}">Sign Up Now</a>
                     </div>
@@ -724,11 +542,8 @@
     <!-- Testimonials Section
     ================================================== -->
     <section id="testimonials">
-
         <div class="row content flex-container">
-
             <div id="testimonial-slider" class="flexslider">
-
                 <ul class="slides">
                     <li>
                         <p>
@@ -736,7 +551,6 @@
                             to do what you believe is great work. And the only way to do great work is to love what you do.
                             If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."
                         </p>
-
                         <div class="testimonial-author">
                             <img src="../static/images/quotes/jobs.jpg" alt="Author image">
                             <div class="author-info">
@@ -745,7 +559,6 @@
                             </div>
                         </div>
                     </li> <!-- end slide -->
-
                     <li>
                         <p>
                             "Would you like me to give you a formula for success? It's quite simple, really: Double your rate of failure.
@@ -767,25 +580,17 @@
     <!-- contact
     ================================================== -->
     <section id="contact">
-
         <div class="row section-head">
-
             <div class="twelve columns">
-
                 <h1>Get In Touch With Us<span>.</span></h1>
-
                 <hr />
             </div>
         </div> <!-- end section-head -->
-
         <div class="row">
-
             <div id="contact-form" class="six columns tab-whole left">
-
                 <!-- form -->
                 <form name="contactForm" id="contactForm" method="post" action="">
                     <fieldset>
-
                         <div class="group">
                             <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minLength="2" required />
                         </div>
@@ -818,9 +623,7 @@
                     <i class="icon-ok"></i>Your message was sent, thank you!<br />
                 </div>
             </div>
-
             <div class="six columns tab-whole right">
-
                 <p class="lead">
                     Fayetteville Technical Community College (FTCC or, informally, Fay Tech) is a community college in Fayetteville, North Carolina.
                     The institution is accredited by the Southern Association of Colleges and Schools Commission on Colleges (SACSCOC) and is a member of the North Carolina Community College System.
@@ -828,14 +631,12 @@
                     It is the 4th largest community college in the state, and boasts one of the largest Continuing Education departments. Located adjacent to Fort Bragg, the college has provided education to the military since 1961.
 
                     <h3 class="address">Come Visit</h3>
-
                 <p>
                     Fayetteville Technical Community College<br />
                     2201 Hull Rd<br />
                     Fayetteville, NC<br />
                     28303
                 </p>
-
                 <h3>Contact Numbers:</h3>
                 <p>
                     Phone: (910) 678 8400<br>
@@ -846,44 +647,33 @@
     <!-- Footer
     ================================================== -->
     <footer>
-
         <div class="row">
-
             <div class="twelve columns content group">
-
                 <ul class="social-links">
                     <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
                     <li><a href="https://github.com/BSchweikart/Project-GLAPS/tree/master"><i class="fa fa-github"></i></a></li>
                 </ul>
-
                 <hr />
-
                 <div class="info">
-
                     <div class="footer-logo"></div>
-
                     <p>
-                        Something
+                        The GLAPS system is being updated as we speak.
                     </p>
                 </div>
             </div>
-
             <ul class="copyright">
                 <li>&copy; {{ year }} - Project GLAPS</li>
                 <li>Design by <a href="http://www.styleshout.com/">Styleshout.</a>.</li>
             </ul>
-
             <div id="go-top">
                 <a class="smoothscroll" title="Back to Top" href="#hero">Back to Top<i class="fa fa-angle-up"></i></a>
             </div>
         </div> <!-- end row -->
     </footer> <!-- end footer -->
-
     <div id="preloader">
         <div id="loader"></div>
     </div>
-
     <!-- Java Script
     ================================================== -->
     <script src="../static/scripts/kreo/js/jquery-1.11.3.min.js"></script>

@@ -7,7 +7,6 @@
     <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="../static/content/kreo/css/base.css">
@@ -22,39 +21,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
     <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">-->
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <!-- favicons
      ================================================== -->
-    <link rel="icon" type="image/png" href="../static/images/g.png">
+    <link rel="icon" type="image/png" href="../static/images/ggg.png">
 </head>
 <body>
     <!-- header
     ================================================== -->
     <header id="main-header">
-
         <div class="row">
-
             <div class="logo">
                 <a href="{{ url_for('home') }}">GLAPS</a>
             </div>
-
             <nav id="nav-wrap">
-
                 <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
                     <span class="menu-icon">Menu</span>
                 </a>
                 <a class="mobile-btn" href="#" title="Hide navigation">
                     <span class="menu-icon">Menu</span>
                 </a>
-
                 <ul id="nav" class="nav">
                     <li><a href="{{ url_for('home') }}">Home.</a></li>
                     {% if g.user %}
                     <li><a href="{{ url_for('glaps') }}"><span class="glyphicon glyphicon-glaps"></span> Glaps</a></li>
                     <li><a href="{{ url_for('visualizations') }}"><span class="glyphicon glyphicon-visualizations"></span> Visualizations</a></li>
-                    <li><span>{{ g.user['username'] }}</span>
+                    <li><a href="{{ url_for('account') }}"><span class="glyphicon glyphicon-log-in"></span>{{ g.user['username'] }} </a></li>
+                    <!--<li><span>{{ g.user['username'] }}</span>-->
                     <li>
                         <a href="{{ url_for('logout') }}">Log Out</a>
                         {% else %}
@@ -63,7 +57,6 @@
                     {% endif %}
                 </ul> <!-- end #nav -->
             </nav> <!-- end #nav-wrap -->
-
             <ul class="header-social">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -71,18 +64,15 @@
             </ul>
         </div>
     </header>
-
     <div class="container body-content">
         {% block content %}{% endblock %}
         <footer>
             <p>&copy; {{ year }} - Project GLAPS</p>
         </footer>
     </div>
-
     <div id="preloader">
         <div id="loader"></div>
     </div>
-
     <!-- Java Script
     ================================================== -->
     <script src="../static/scripts/kreo/js/jquery-1.11.3.min.js"></script>

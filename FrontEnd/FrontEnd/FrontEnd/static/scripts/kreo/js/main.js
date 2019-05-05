@@ -199,7 +199,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "inc/sendEmail.php",
+                url: "../static/inc/sendEmail.php",
                 data: $(form).serialize(),
                 beforeSend: function () {
                     sLoader.fadeIn();

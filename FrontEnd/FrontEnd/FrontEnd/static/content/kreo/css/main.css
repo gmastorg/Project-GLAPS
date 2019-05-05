@@ -10,14 +10,14 @@
 /*  03. =preloader
 /*  04. =forms
 /*  05. =theme common styles
-/*  06. =header styles
-/*  07. =hero section
+/*  06. =header styles GLAPS Logo
+/*  07. =hero section background image
 /*  08. =portfolio styles
 /*  09. =services
 /*  10. =about
 /*  11. =testimonials
 /*  12. =contact
-/*  13. =footer
+/*  13. =footer Bottom section GLAPS
 /*
 /* =================================================================== */
 
@@ -25,13 +25,11 @@
 /* 01. =webfonts and iconfonts
 /* =================================================================== */
 
-@import url("fonts.css");
-@import url("font-awesome/css/font-awesome.min.css");
-
+@import url("../../kreo/css/fonts.css");
+@import url("../../kreo/css/font-awesome/css/font-awesome.min.css");
 /**
 /* 02. =document setup
 /* =================================================================== */
-
 /* Body
 ---------------------------------------------------------------------- */
 html,
@@ -649,9 +647,10 @@ header {
             color: transparent;
             width: 114px;
             height: 66px;
-            background: url("../images/logoK@2x.png") no-repeat center;
+            background: url("../../../images/HomePage/glapsHeader.png") no-repeat center;
             background-size: 61px 14px;
         }
+    /*^^Logo for header*/
 
     /* header social */
     header .header-social {
@@ -938,7 +937,7 @@ ul#nav {
 }
 
 /*
-/* 07. =hero section
+/* 07. =hero section back ground image
 /* =================================================================== */
 
 #hero {
@@ -2362,7 +2361,7 @@ input[type="email"],
 }
 
 /**
-/* 13. =footer
+/* 13. =footer Bottom section GLAPS
 /* =================================================================== */
 
 footer {
