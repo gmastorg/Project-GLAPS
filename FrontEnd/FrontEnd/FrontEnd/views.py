@@ -128,6 +128,7 @@ def glaps():
     States_Counties = getState_CountiesList()
     valueError = ""
     countyError = ""
+    HomeVal2 = ""
     if request.method == "POST":
         County = None
         HomeVal = None

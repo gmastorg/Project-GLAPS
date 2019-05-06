@@ -112,6 +112,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGT0avpEh98zEV2TcnRn1x-4V8b3s71Kc&library=places&callback=initMap"
             async defer></script>
 </body>
+
 <section id="GLAPS">
 
     <div class="row section-head">
@@ -132,11 +133,17 @@
                 <fieldset>
                     <div>
                         <h3>{{countyError}}</h3>
-                        <input name="County" type="text" id="County" placeholder="County" value="" />
+                        <input name="County" type="text" readonly id="County" placeholder="County" value="" />
                     </div>
                     <div>
                         <h3>{{valueError}}</h3>
-                        <input name="HomeVal" type="text" id="HomeVal" placeholder="Current Home Value" value="" />
+                        <script>
+                            function isNumber(input) {
+                                var regex = /[^0-9]/gi;
+                                input.value = input.value.replace(regex, '');
+                            }
+                        </script>
+                        <input name="HomeVal" type="text" id="HomeVal" placeholder="Current Home Value" value="" onkeyup="isNumber(this)"/>
                     </div>
                     <div>
                         <button class="submitform">Submit</button>
