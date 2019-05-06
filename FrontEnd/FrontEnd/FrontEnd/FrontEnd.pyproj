@@ -96,6 +96,7 @@
     <Content Include="FrontEnd\static\content\khronos\css\micons\fonts\icomoon.woff" />
     <Content Include="FrontEnd\static\content\khronos\css\micons\micons.css" />
     <Content Include="FrontEnd\static\content\khronos\css\vendor.css" />
+    <Content Include="FrontEnd\static\content\khronos\css\visuals.css" />
     <Content Include="FrontEnd\static\content\khronos\fonts\roboto\roboto-black-webfont.woff" />
     <Content Include="FrontEnd\static\content\khronos\fonts\roboto\roboto-black-webfont.woff2" />
     <Content Include="FrontEnd\static\content\khronos\fonts\roboto\roboto-blackitalic-webfont.woff" />
@@ -262,6 +263,7 @@
     <Content Include="FrontEnd\static\scripts\respond.js" />
     <Content Include="FrontEnd\static\scripts\respond.min.js" />
     <Content Include="FrontEnd\static\scripts\_references.js" />
+    <Content Include="FrontEnd\templates\facets.html" />
     <Content Include="FrontEnd\templates\glaps.html" />
     <Content Include="FrontEnd\templates\home.html" />
     <Content Include="FrontEnd\templates\layout.html" />
