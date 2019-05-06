@@ -178,6 +178,12 @@ def account():
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
 
+#view for the facets.html page
+@app.route('/facets')
+def facets():
+    return render_template('facets.html')
+
+
 #View for the facets.html page
 @app.route('/visualizations')
 def visualizations():
