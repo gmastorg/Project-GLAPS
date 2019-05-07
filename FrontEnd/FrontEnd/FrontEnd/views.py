@@ -15,6 +15,7 @@ from FrontEnd.db import get_db
 from datetime import datetime
 from flask import render_template, Markup
 from FrontEnd import app
+
 #bp = Blueprint('auth', __name__, url_prefix='/auth')
 @app.route('/')
 @app.route('/home')
@@ -25,34 +26,7 @@ def home():
         title='Home Page',
         year=datetime.now().year)
 
-def login_required(view):
-	"""View decorator that redirects anonymous users to the login page."""
-	@functools.wraps(view)
-	def wrapped_view(**kwargs):
-		if g.user is None:
-			return redirect(url_for('auth.login'))
-
-		return view(**kwargs)
-
-	return wrapped_view
-
-#@app.before_app_request #'Flask' object has no attribute 'before_app_request
-def load_logged_in_user():
-	"""If a user id is stored in the session, load the user object from
-	the database into ``g.user``."""
-	user_id = session.get('user_id')
-
-	if user_id is None:
-		g.user = None
-	else:
-		g.user = get_db().execute('SELECT * FROM users WHERE id = ?', (user_id,)).fetchone()
-
-@app.route('/logout')
-def logout():
-	"""Clear the current session, including the stored user id."""
-	session.clear()
-	return redirect(url_for('comingsoon'))
-
+#Region - Log In information
 @app.route('/login', methods=('GET', 'POST'))
 def login():
 	"""Log in a registered user by adding the user id to the session."""
@@ -78,6 +52,33 @@ def login():
 
 	return render_template('auth/login.html', title='Login', year=datetime.now().year)
 
+def login_required(view):
+	"""View decorator that redirects anonymous users to the login page."""
+	@functools.wraps(view)
+	def wrapped_view(**kwargs):
+		if g.user is None:
+			return redirect(url_for('auth.login'))
+
+		return view(**kwargs)
+
+	return wrapped_view
+
+def load_logged_in_user():
+	"""If a user id is stored in the session, load the user object from
+	the database into ``g.user``."""
+	user_id = session.get('user_id')
+
+	if user_id is None:
+		g.user = None
+	else:
+		g.user = get_db().execute('SELECT * FROM users WHERE id = ?', (user_id,)).fetchone()
+
+@app.route('/logout')
+def logout():
+	"""Clear the current session, including the stored user id."""
+	session.clear()
+	return redirect(url_for('comingsoon'))
+#end Region
 @app.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':

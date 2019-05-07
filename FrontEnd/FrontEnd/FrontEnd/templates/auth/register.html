@@ -144,7 +144,7 @@
                 var confirm = $('#verifypassword').val();
                 if (password == confirm) {
                     $('#message1').css('color', 'green');
-                    $('#message1').html('Success! You have reached the end of this demo application');
+                    $('#message1').html('Password good to go');
 
                 }
                 else {
@@ -283,7 +283,7 @@
                     <div class="form-group">
                         <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
                         <div class="col-sm-11 col-md-11 col-lg-11 col-xs-10" style="text-align:center;">
-                            <button id="valuser" type="submit" onclick="location.href = 'auth/login';"
+                            <button id="valuser" type="submit" onclick="submitForm()" ,"location.href='auth/login' ;"
                                     class="btn btn-success">
                                 Submit
                             </button>
