@@ -170,7 +170,7 @@ def glaps():
         message= 'Enter your location on the map and your current home value below:',
         countyError = countyError, valueError = valueError)
 
-@app.route('/account')
+@app.route('/account', methods=["GET","POST"])
 def account():
     load_logged_in_user()
     return render_template('auth/account.html',

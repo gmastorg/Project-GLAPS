@@ -8,40 +8,30 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 boxStyle" style="padding-right: 0px!important;padding-left: 0px!important;">
         <div class="panel-body" style="padding-right: 4px!important;padding-left: 4px!important;">
-            <div class="span2">
-                <img src="../static/images/userIcon.png" class="img-circle">
-                <p>
-                    User set Avatar is unavailable at this time.
-                </p>
-            </div>
-            <div class="span8">
-                <h3>{{ g.user['username'] }}</h3>
-                <h6>{{ g.user['email'] }}</h6>
-            </div>
-            <div class="span2">
-                <div class="form-group">
+            <form method="POST" action="{{ url_for('account', account_name=g.user) }}" accept-charset="UTF-8">
+
+                <div class="span2">
+                    <img src="../static/images/userIcon.png" class="img-circle">
                     <p>
-                        This function is not implemented at this time.
+                        User set Avatar is unavailable at this time.
                     </p>
-                    <!--Submit Button-->
+                </div>
+                <div class="span8">
+                    <h3>{{ g.user['username'] }}</h3>
+                    <h6>{{ g.user['email'] }}</h6>
+                </div>
+                <div class="span2">
                     <div class="form-group">
-                        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" id="message1" style="font-weight: bold; text-align: center;font-size: 10pt;">
-                        </div>
+                        <p>
+                            This function is not implemented at this time.
+                        </p>
+                        <!--Submit Button-->
+                        <input type=submit value=Delete>
+                        <!--end button-->
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
-                        <div class="col-sm-11 col-md-11 col-lg-11 col-xs-10" style="text-align:center;">
-                            <button id="deluser" type="submit" onclick="location.href='home' ;"
-                                    class="btn btn-success">
-                                Delete
-                            </button>
-                        </div>
-                        <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
-                    </div><!--end button-->
-                </div> close
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<!--This page is for show the forecast data from the GLAPS system-->
 {% endblock %}
