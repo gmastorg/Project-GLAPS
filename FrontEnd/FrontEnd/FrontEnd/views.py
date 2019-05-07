@@ -115,10 +115,19 @@ def register():
 @app.route('/account', methods=["GET","POST"])
 def account():
     load_logged_in_user()
-    return render_template('auth/account.html',
-        title='Account',
-        bytearray=datetime.now().year,
-        message= 'Enter your information to display the value')
+    if request.method == 'POST':
+        username = g.user['username']
+        fobar = g.user
+        db = get_db()
+        error = None
+        db.execute("DELETE FROM users WHERE username = ?", (username,))
+        db.commit()
+
+        if error is None:
+            session.clear()
+            return redirect(url_for('home')) #redirect to page showing user account deleted
+
+    return render_template('auth/account.html', title='Account', year=datetime.now().year)
 
 @app.route('/comingsoon')
 def comingsoon():
