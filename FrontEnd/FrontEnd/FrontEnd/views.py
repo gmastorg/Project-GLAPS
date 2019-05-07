@@ -174,7 +174,7 @@ def glaps():
 @app.route('/account')
 def account():
     load_logged_in_user()
-    return render_template('account.html',
+    return render_template('auth/account.html',
         title='Account',
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
@@ -207,3 +207,15 @@ def getState_CountiesList():
 
     States_Counties.pop(0)
     return States_Counties
+
+#Region Misc Pages
+@app.errorhandler(500)
+def server_not_found(e):
+    # note that we set the 500 status explicitly
+    return render_template('errors/500.html'), 500
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('errors/404.html'), 404
+#End Region Misc Pages
