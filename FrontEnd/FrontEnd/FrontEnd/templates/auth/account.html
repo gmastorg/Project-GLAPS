@@ -17,23 +17,28 @@
             <div class="span8">
                 <h3>{{ g.user['username'] }}</h3>
                 <h6>{{ g.user['email'] }}</h6>
-                <!--<h6>Ubication: Colombia</h6>
-                <h6>Old: 1 Year</h6>
-                <h6><a href="#">More... </a></h6>-->
             </div>
             <div class="span2">
-                <div class="btn-group">
-                    <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                        <p>
-                            This function is not implemented at this time.
-                        </p>
-                        <span class="icon-cog icon-white"></span><span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!--<li><button href="#"><span class="icon-wrench"></span> Modify</a></li>-->
-                        <li><button href="#"><span class="icon-trash"></span> Delete</a></li>
-                    </ul>
-                </div>
+                <div class="form-group">
+                    <p>
+                        This function is not implemented at this time.
+                    </p>
+                    <!--Submit Button-->
+                    <div class="form-group">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" id="message1" style="font-weight: bold; text-align: center;font-size: 10pt;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
+                        <div class="col-sm-11 col-md-11 col-lg-11 col-xs-10" style="text-align:center;">
+                            <button id="deluser" type="submit" onclick="location.href='home' ;"
+                                    class="btn btn-success">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="col-sm-1 col-md-1 col-lg-1 col-xs-1"></div>
+                    </div><!--end button-->
+                </div> close
             </div>
         </div>
     </div>

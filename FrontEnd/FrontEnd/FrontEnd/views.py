@@ -16,7 +16,6 @@ from datetime import datetime
 from flask import render_template, Markup
 from FrontEnd import app
 
-#bp = Blueprint('auth', __name__, url_prefix='/auth')
 @app.route('/')
 @app.route('/home')
 def home():
@@ -46,7 +45,7 @@ def login():
 			# store the user id in a new session and return to the index
 			session.clear()
 			session['user_id'] = user['id']
-			return redirect(url_for('home')) #Need to change to a new screen
+			return redirect(url_for('home'))
 
 		flash(error)
 
