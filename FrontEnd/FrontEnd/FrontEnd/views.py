@@ -128,6 +128,7 @@ def glaps():
     States_Counties = getState_CountiesList()
     valueError = ""
     countyError = ""
+    HomeVal2 = ""
     if request.method == "POST":
         County = None
         HomeVal = None
@@ -177,6 +178,12 @@ def account():
         title='Account',
         bytearray=datetime.now().year,
         message= 'Enter your information to display the value')
+
+#view for the facets.html page
+@app.route('/facets')
+def facets():
+    return render_template('facets.html')
+
 
 #View for the facets.html page
 @app.route('/visualizations')
