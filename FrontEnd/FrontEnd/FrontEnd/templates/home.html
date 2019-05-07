@@ -50,6 +50,7 @@
                     {% if g.user %}
                     <li><a href="{{ url_for('glaps') }}"><span class="glyphicon glyphicon-glaps"></span> Glaps</a></li>
                     <li><a href="{{ url_for('visualizations') }}"><span class="glyphicon glyphicon-visualizations"></span> Visualizations</a></li>
+                    <li><a href="{{ url_for('facets') }}"><span class="glyphicon glyphicon-visualizations"></span> Facets</a></li>
                     <li><a href="{{ url_for('account') }}"><span class="glyphicon glyphicon-log-in"></span>{{ g.user['username'] }} </a></li>
                     <li>
                         <a href="{{ url_for('logout') }}">Log Out</a>

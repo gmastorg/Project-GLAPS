@@ -24,7 +24,7 @@
     <div id="map"></div>
     <script>
         function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
+           var map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: 35.052666, lng: -78.878357 },
                 zoom: 8
             });
@@ -44,6 +44,8 @@
                         map: resultsMap,
                         position: results[0].geometry.location
                     });
+
+                    //gets county and state from JSON response provided from google maps api
                     var loc1 = results[0];
                     var county, state;
                     $.each(loc1, function (k1, v1) {
@@ -70,20 +72,15 @@
 
                     });
 
+                    //displays an error if the county and state are not provided from user search
                     if (county == "" || county == "undefined" || county == null) {
-                        alert("Could not locate County. Please enter an exact street address.");
+                        alert ("Could not locate County. Please enter an exact street address.");
                     }
 
+                    //formats to the format required by the glaps machine learning api
                     var county = String(county) + ", " + String(state)
 
-                    //shows the entire object data
-                    //var myJSON = JSON.stringify(results);
-                    //document.getElementById("County").value = myJSON;
-
-                    //var loc = results[0].address_components[1].short_name
-                    //var loc2 = results[0].address_components[2].long_name
-                    //var county = String(loc) + ", "+ String(loc2)
-
+                    //sets value to the county variable
                     document.getElementById('County').value = county;
                 } else {
                     alert('Geocode was not successful for the following reason: ' + status);
@@ -92,6 +89,7 @@
         }
     </script>
 </body>
+
 <section id="GLAPS">
 
     <div class="row section-head">
@@ -112,11 +110,19 @@
                 <fieldset>
                     <div>
                         <h3>{{countyError}}</h3>
-                        <input name="County" type="text" id="County" placeholder="County" value="" />
+                        <input name="County" type="text" readonly id="County" placeholder="County" value="" />
                     </div>
                     <div>
                         <h3>{{valueError}}</h3>
-                        <input name="HomeVal" type="text" id="HomeVal" placeholder="Current Home Value" value="" />
+                        <script>
+                            //input validation for the HomeVal box only allows numbers
+                            //automatically erases anything other than a number
+                            function isNumber(input) {
+                                var regex = /[^0-9]/gi;
+                                input.value = input.value.replace(regex, '');
+                            }
+                        </script>
+                        <input name="HomeVal" type="text" id="HomeVal" placeholder="Current Home Value" value="" onkeyup="isNumber(this)"/>
                     </div>
                     <div>
                         <button class="submitform">Submit</button>

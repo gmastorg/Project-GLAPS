@@ -111,6 +111,14 @@ def register():
             flash(error)
 
     return render_template('auth/register.html', title='Register', year=datetime.now().year)
+	
+@app.route('/account', methods=["GET","POST"])
+def account():
+    load_logged_in_user()
+    return render_template('auth/account.html',
+        title='Account',
+        bytearray=datetime.now().year,
+        message= 'Enter your information to display the value')
 
 @app.route('/comingsoon')
 def comingsoon():
@@ -124,6 +132,52 @@ def comingsoon():
 app.config["DEBUG"] = True
 @app.route('/glaps', methods=["GET","POST"]) #this section is used for when the data bases are linked.
 def glaps():
+    load_logged_in_user()
+    States_Counties = getState_CountiesList()
+    valueError = ""
+    countyError = ""
+    HomeVal2 = ""
+    if request.method == "POST":
+        County = None
+        HomeVal = None
+
+        County = request.form['County']
+
+        if County == "" or County == None:
+            countyError = Markup("<font color = red><bold>Please enter a County<bold></font>")
+        try:
+            HomeVal = int(request.form["HomeVal"])
+        except:
+            valueError = Markup("<font color = red><bold>Please enter a Home Value<bold></font>")
+        if County != "" and HomeVal is not None and County != None:
+            for item in States_Counties:
+                if County == item:
+                    result = getAPI()
+                    result = list(result[0].values())
+
+                    actualNoStad = str("{:,}".format(result[0]))
+                    actualWStad = str("{:,}".format(result[1]))
+                    medianNoStad = str("{:,}".format(result[2]))
+                    medianWStad = str("{:,}".format(result[3]))
+
+                    output = Markup("Current Home Value without a Stadium:   " + '<font color="limegreen">$' + actualNoStad + '</font>' + \
+                    "<br><br>Current Home Value with a Stadium:   " + '<font color="limegreen">$' + actualWStad + '</font>' + \
+                   "<br><br>Median Value of Homes in " + '<font color="yellow">' + County + '</font>' + " without a Stadium:   " + '<font color="limegreen">$' + medianNoStad + '</font>' + \
+                   "<br><br>Median Value of Homes in " + '<font color="yellow">' + County + '</font>' + " with a Stadium:   " + '<font color="limegreen">$' + medianWStad + '</font>' + \
+                   "<br><br><br><small>The predicted values have a PERCENT margin of error and were calculated using data from the 2017 U.S. Census</small>")
+
+                    return render_template('glaps.html',
+                    title='Home Value Predictor',
+                    bytearray=datetime.now().year,
+                    message=output)
+
+                countyError = Markup("<font color = red><bold>Please enter a County<bold></font>")
+
+    return render_template('glaps.html',
+        title='Home Value Predictor',
+        bytearray=datetime.now().year,
+        message= 'Enter your location on the map and your current home value below:',
+        countyError = countyError, valueError = valueError)
     load_logged_in_user()
     States_Counties = getState_CountiesList()
     valueError = ""
@@ -170,17 +224,18 @@ def glaps():
         message= 'Enter your location on the map and your current home value below:',
         countyError = countyError, valueError = valueError)
 
-@app.route('/account', methods=["GET","POST"])
-def account():
-    load_logged_in_user()
-    return render_template('auth/account.html',
-        title='Account',
-        bytearray=datetime.now().year,
-        message= 'Enter your information to display the value')
+
+#view for the facets.html page
+@app.route('/facets')
+def facets():
+    return render_template('facets.html')
+
 
 #View for the facets.html page
 @app.route('/visualizations')
 def visualizations():
+    """Renders the visualizations page."""
+    return render_template('visualizations.html')
     """Renders the visualizations page."""
     return render_template('visualizations.html')
 
@@ -194,6 +249,18 @@ def getAPI():
     return responseJson
 
 def getState_CountiesList():
+
+    States_Counties = []
+    path = os.path.abspath("States_Counties.csv")
+    with open(path) as file:
+        inputFile = csv.reader(file)
+
+        for row in inputFile:
+             State_County = row[0]
+             States_Counties.append(State_County)
+
+    States_Counties.pop(0)
+    return States_Counties
 
     States_Counties = []
     path = os.path.abspath("States_Counties.csv")

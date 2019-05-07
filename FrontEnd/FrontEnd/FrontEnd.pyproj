@@ -246,6 +246,7 @@
     <Content Include="FrontEnd\static\scripts\bootstrap.js" />
     <Content Include="FrontEnd\static\scripts\jquery-1.10.2.js" />
     <Content Include="FrontEnd\static\scripts\respond.js" />
+    <Content Include="FrontEnd\templates\facets.html" />
     <Content Include="FrontEnd\templates\glaps.html" />
     <Content Include="FrontEnd\templates\home.html" />
     <Content Include="FrontEnd\templates\layout.html" />
