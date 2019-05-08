@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>GLAPS Data Visualization With Facets</title>
+    {% extends "layout.html" %}
+    {% block content %}
+    <br />
+    <br />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- mobile specific metas
@@ -9,49 +13,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- CSS
     ================================================== -->
-	<link rel="stylesheet" href="../static/content/geocoding/visualizations.css">
+    <link rel="stylesheet" href="../static/content/geocoding/visualizations.css">
     <!-- script
     ================================================== -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.24/webcomponents-lite.js"></script>
 </head>
-	<body>
-		<div class="visuals">
-			<h1 style="color:yellow;font-size:40px;">Facets Dive Data Visualizations</h1>
-			<br />
-			<h1>
-			<A HREF="{{url_for('facets')}}"><u>See Facets Dive</u></A>
-			</h1><br />
-			<br />
-			<br />
-			<h1 style="color:yellow;font-size:40px;">Tensorboard Model Visualizations</h1>
-			<br />
-			<br />
-			<h2>Creating a Model with Linear Regression Activation</h2>
-			<img src="/static/images/Tensorboard/linear.png" alt="Linear Image" height="300" width="450" ;>
-			<br />
-			<br />
-			<h2>Creating a Model with Relu Activation</h2>
-			<img src="/static/images/Tensorboard/relu.png" alt="Linear Image" height="300" width="450" ;>
-			<br />
-			<br />
-			<h2>Comparing Activation - Linear vs. Relu</h2>
-			<img src="/static/images/Tensorboard/linear_relu.png" alt="Linear Image" height="400" width="800" ;>
-			<br />
-			<a href="https://keras.io/activations/">See Keras Documentation for Activations</a>
-			<br />
-			<br />
-			<h2>Creating a Model with Stochastic Gradient Descent Optimizer</h2>
-			<img src="/static/images/Tensorboard/sgd.png" alt="Linear Image" height="300" width="450" ;>
-			<br />
-			<br />
-			<h2>Creating a Model with AdaDelta Optimizer</h2>
-			<img src="/static/images/Tensorboard/adadelta.png" alt="Linear Image" height="300" width="450" ;>
-			<br />
-			<br />
-			<h2>Comparing Optimizers - SGD vs. Adadelta</h2>
-			<img src="/static/images/Tensorboard/sgd_adadelta.png" alt="Linear Image" height="400" width="800" ;>
-			<br />
-			<a href="https://keras.io/optimizers/">See Keras Documentation for Optimizers</a>
-		</div>
-	</body>
+<body>
+    <div class="visuals">
+        <h1 style="color:yellow;font-size:40px;">Facets Dive Data Visualizations</h1>
+        <br />
+        <h1>
+            <A HREF="{{url_for('facets')}}"><u>See Facets Dive</u></A>
+        </h1><br />
+        <br />
+        <br />
+        <h1 style="color:yellow;font-size:40px;">Tensorboard Model Visualizations</h1>
+        <br />
+        <br />
+        <h2>Creating a Model with Linear Regression Activation</h2>
+        <img src="/static/images/Tensorboard/linear.png" alt="Linear Image" height="300" width="450" ;>
+        <br />
+        <br />
+        <h2>Creating a Model with Relu Activation</h2>
+        <img src="/static/images/Tensorboard/relu.png" alt="Linear Image" height="300" width="450" ;>
+        <br />
+        <br />
+        <h2>Comparing Activation - Linear vs. Relu</h2>
+        <img src="/static/images/Tensorboard/linear_relu.png" alt="Linear Image" height="400" width="800" ;>
+        <br />
+        <a href="https://keras.io/activations/">See Keras Documentation for Activations</a>
+        <br />
+        <br />
+        <h2>Creating a Model with Stochastic Gradient Descent Optimizer</h2>
+        <img src="/static/images/Tensorboard/sgd.png" alt="Linear Image" height="300" width="450" ;>
+        <br />
+        <br />
+        <h2>Creating a Model with AdaDelta Optimizer</h2>
+        <img src="/static/images/Tensorboard/adadelta.png" alt="Linear Image" height="300" width="450" ;>
+        <br />
+        <br />
+        <h2>Comparing Optimizers - SGD vs. Adadelta</h2>
+        <img src="/static/images/Tensorboard/sgd_adadelta.png" alt="Linear Image" height="400" width="800" ;>
+        <br />
+        <a href="https://keras.io/optimizers/">See Keras Documentation for Optimizers</a>
+    </div>
+</body>
 </html>
+
+{% endblock %}
