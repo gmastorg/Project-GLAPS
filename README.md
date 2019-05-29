@@ -1,6 +1,6 @@
 # Project-GLAPS
 This is a joint Cap Stone Project for Geographic Location Attribute Predictor System. This is only the front end.  
-
+www.glaps.live what is working for our final. The project is being turned over to Backend team Should they wish to expand.
 ## Contributing
 
 
