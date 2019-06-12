@@ -1,4 +1,4 @@
-# This project is now being expanded on by the backend developers.
+## This project is now being expanded on by the backend developers.
 
 - Gabriela Canjura
 - Mallory Milstead
